@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Rectangle on top of the image -->
+    <View
+        android:id="@+id/rectangle1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/background"
+        app:layout_constraintDimensionRatio="7:14"
+        app:layout_constraintTop_toTopOf="@id/background_image"
+        app:layout_constraintBottom_toBottomOf="@id/background_image"
+        app:layout_constraintStart_toStartOf="@id/background_image"
+        app:layout_constraintEnd_toEndOf="@id/background_image" />
+
+    <!-- Logo Image-->
+
+    <!-- EditText -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="329dp"
+        android:layout_height="490dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="@id/rectangle1"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/rectangle1"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/rectangle1"
+        app:layout_constraintTop_toTopOf="@id/rectangle1"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <EditText
+        android:id="@+id/pacient_id"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/white"
+        android:hint="Enter Name!"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="@id/rectangle1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/rectangle1"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
+
+    <EditText
+        android:id="@+id/pacient_password"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/white"
+        android:hint="Enter Password!"
+        android:textColor="@android:color/black"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@id/rectangle1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/rectangle1"
+        app:layout_constraintTop_toBottomOf="@id/pacient_id" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
