@@ -26,11 +26,13 @@
         app:layout_constraintTop_toTopOf="@id/background_image"
         app:layout_constraintBottom_toBottomOf="@id/background_image"
         app:layout_constraintStart_toStartOf="@id/background_image"
-        app:layout_constraintEnd_toEndOf="@id/background_image" />
+        app:layout_constraintEnd_toEndOf="@id/background_image"
+        app:layout_constraintWidth_percent="0.85"/>
 
     <!-- Logo Image-->
 
     <!-- EditText -->
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="329dp"
@@ -44,7 +46,7 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/rectangle1"
         app:layout_constraintHeight_percent="0.3"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="@id/rectangle1"
         app:layout_constraintTop_toTopOf="@id/rectangle1"
         app:layout_constraintVertical_bias="0.0"
