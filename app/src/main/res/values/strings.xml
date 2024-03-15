@@ -4,4 +4,5 @@
 
     <!-- String resource for the background image description -->
     <string name="background_image_description">Background Image</string>
+    <string name="reset_pswd_info"> We will send you a link where you can reset your password to the email below!</string>
 </resources>
