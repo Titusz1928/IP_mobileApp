@@ -5,4 +5,5 @@
     <color name="background">#28782B</color>
     <color name="foreground">#2A970C</color>
     <color name="gray">#C6919191</color>
+    <color name="lightgreen">#C4DBAA</color>
 </resources>

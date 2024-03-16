@@ -77,14 +77,14 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView3"
                     android:layout_width="match_parent"
-                    android:layout_height="500dp"
-                    android:background="@color/foreground"
+                    android:layout_height="350dp"
+                    android:background="@color/white"
                     android:layout_margin="10dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/foreground"
+                        android:background="@color/white"
                         >
 
                         <TextView
@@ -92,22 +92,23 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
 
-                            android:background="@drawable/white_black_border"
+
                             android:text="My doctor"
                             android:textSize="24sp"
-                            app:layout_constraintBottom_toTopOf="@+id/cardView31"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintHorizontal_bias="0.056"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.0" />
+                            app:layout_constraintVertical_bias="0.03" />
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cardView31"
                             android:layout_width="match_parent"
-                            android:layout_height="450dp"
-                            android:layout_marginTop="55dp"
+                            android:layout_height="300dp"
+                            android:layout_marginTop="74dp"
                             android:layout_marginBottom="20dp"
+                            android:background="@drawable/bordered_lightgreen"
 
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -117,13 +118,13 @@
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:background="@drawable/white_black_border">
+                                android:background="@color/lightgreen">
 
                                 <TextView
                                     android:id="@+id/cv31_tv_phone"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="24dp"
+                                    android:layout_marginStart="40dp"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginEnd="314dp"
                                     android:text="Telephone"
@@ -139,6 +140,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
 
+                                    android:layout_marginStart="8dp"
                                     android:text="Name"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -147,14 +149,14 @@
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintVertical_bias="0.03" />
 
-                                <EditText
+                                <TextView
                                     android:id="@+id/pt_name"
-                                    android:layout_width="256dp"
-                                    android:layout_height="61dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:layout_marginBottom="8dp"
                                     android:ems="10"
-                                    android:inputType="none"
                                     android:text="Dr. Boros Titusz"
+                                    android:textSize="24sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintHorizontal_bias="0.117"
@@ -162,12 +164,12 @@
                                     app:layout_constraintTop_toBottomOf="@+id/cv31_tv_name"
                                     app:layout_constraintVertical_bias="0.0" />
 
-                                <EditText
+                                <TextView
                                     android:id="@+id/pt_phone"
-                                    android:layout_width="260dp"
-                                    android:layout_height="53dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:ems="10"
-                                    android:inputType="none"
+                                    android:textSize="24sp"
                                     android:text="+40 7134 400 184"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -180,6 +182,7 @@
                                     android:id="@+id/cv31_tv_email"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
                                     android:text="E-mail"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -189,41 +192,41 @@
                                     app:layout_constraintTop_toBottomOf="@+id/pt_phone"
                                     app:layout_constraintVertical_bias="0.0" />
 
-                                <EditText
+                                <TextView
                                     android:id="@+id/pt_email"
-                                    android:layout_width="320dp"
-                                    android:layout_height="59dp"
+                                    android:layout_width="342dp"
+                                    android:layout_height="35dp"
                                     android:ems="10"
-                                    android:inputType="text"
                                     android:text="dr.boros.titusz@medicalclinic.com"
+                                    android:textSize="20sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.333"
+                                    app:layout_constraintHorizontal_bias="0.375"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toBottomOf="@+id/cv31_tv_email"
-                                    app:layout_constraintVertical_bias="0.0" />
+                                    app:layout_constraintVertical_bias="0.038" />
 
-                                <EditText
-                                    android:id="@+id/editTextText4"
-                                    android:layout_width="321dp"
-                                    android:layout_height="50dp"
+                                <TextView
+                                    android:id="@+id/ptOffice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
                                     android:layout_marginEnd="138dp"
                                     android:layout_marginBottom="84dp"
                                     android:ems="10"
-                                    android:inputType="none"
+                                    android:textSize="24sp"
                                     android:text="Section B, Level 4"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintHorizontal_bias="0.0"
                                     app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                                    app:layout_constraintTop_toBottomOf="@+id/textView13"
+                                    app:layout_constraintVertical_bias="0.0" />
 
                                 <TextView
                                     android:id="@+id/textView13"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="8dp"
                                     android:text="Office"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -244,20 +247,142 @@
 
 
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView2"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@color/gray"
+                app:cardCornerRadius="30dp"
+                android:layout_margin="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="500dp"
-                    android:background="@color/foreground"
-                    app:cardCornerRadius="30dp"
-                    android:layout_margin="10dp">
+                    android:layout_height="match_parent"
+                    android:background="@color/gray">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv1_in_cv2"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
-                </androidx.cardview.widget.CardView>
+                        android:layout_height="100dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.138" >
 
-                <androidx.cardview.widget.CardView
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv1_cv1_in_cv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginEnd="334dp"
+                                android:text="Title"
+                                android:textSize="24sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv2_cv1_in_cv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="32dp"
+                                android:text="11/04/2024"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.506" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv2_in_cv2"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.4" >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv1_cv2_in_cv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginEnd="334dp"
+                                android:text="Title"
+                                android:textSize="24sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv2_cv2_in_cv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="32dp"
+                                android:text="16/04/2024"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.506" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <TextView
+                        android:id="@+id/tv_cv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recommandations"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toTopOf="@+id/cv1_in_cv2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
                     android:id="@+id/cardView1"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
