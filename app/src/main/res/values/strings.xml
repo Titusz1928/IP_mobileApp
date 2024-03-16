@@ -12,4 +12,11 @@
     <string name="profile_fragment">PROFILE</string>
     <string name="settings_fragment">SETTINGS</string>
     <string name="reset_pswd_code_info">We have sent a code to your email! Enter it to continue.</string>
+    <string name="recom_test"> Gestionarea stresului și odihna adecvată: Încearcă să gestionezi stresul prin tehnici de relaxare,
+        cum ar fi meditația sau respirația profundă.
+        Asigură-te că dormi suficient pentru a-ți menține echilibrul hormonal și nivelul de energie.
+        Meditația și respirația profundă sunt doar două dintre tehnicile pe care le poți încerca pentru a-ți calma mintea și corpul în timpul momentelor tensionate.
+
+    </string>
+    <string name="recom_title"> Gestionarea stresului </string>
 </resources>
