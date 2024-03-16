@@ -4,10 +4,12 @@
 
     <!-- String resource for the background image description -->
     <string name="background_image_description">Background Image</string>
-    <string name="reset_pswd_info"> We will send you a link where you can reset your password to the email below!</string>
+    <string name="reset_pswd_info"> To reset your password you need to open the link sent to the email adress specified below!</string>
+    <string name="reset_pswd_info2"> Please enter the email address associated with your account!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home_fragment">HOME</string>
     <string name="profile_fragment">PROFILE</string>
     <string name="settings_fragment">SETTINGS</string>
+    <string name="reset_pswd_code_info">We have sent a code to your email! Enter it to continue.</string>
 </resources>
