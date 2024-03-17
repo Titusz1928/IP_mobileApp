@@ -45,19 +45,19 @@
                             android:id="@+id/textView8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Additional information"
+                            android:text="Informație adițională"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.077"
+                            app:layout_constraintHorizontal_bias="0.11"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.762" />
+                            app:layout_constraintVertical_bias="0.861" />
 
                         <TextView
                             android:id="@+id/textView4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="140dp"
                             android:layout_height="wrap_content"
-                            android:text="Welcome user!"
+                            android:text="Bun venit, utilizator!"
                             android:textAlignment="center"
                             android:textSize="28sp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -69,184 +69,177 @@
                 </androidx.cardview.widget.CardView>
 
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="10dp"
+                android:background="@color/white">
 
-
-
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView3"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:background="@color/white"
-                    android:layout_margin="10dp">
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginTop="8dp"
+                        android:text="Doctorul meu"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.056"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView31"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        >
+                        android:layout_height="240dp"
+                        android:layout_marginTop="74dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/bordered_lightgreen"
 
-                        <TextView
-                            android:id="@+id/textView7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-
-                            android:text="My doctor"
-                            android:textColor="@color/black"
-                            android:textSize="24sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.056"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.03" />
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cardView31"
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="300dp"
-                            android:layout_marginTop="74dp"
-                            android:layout_marginBottom="20dp"
-                            android:background="@drawable/bordered_lightgreen"
+                            android:layout_height="match_parent"
+                            android:background="@color/lightgreen">
 
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" >
+                            <TextView
+                                android:id="@+id/cv31_tv_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginEnd="314dp"
+                                android:text="Telefon"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.533"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/pt_name"
+                                app:layout_constraintVertical_bias="0.007" />
 
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/lightgreen">
+                            <TextView
+                                android:id="@+id/cv31_tv_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
 
-                                <TextView
-                                    android:id="@+id/cv31_tv_phone"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="40dp"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginEnd="314dp"
-                                    android:text="Telephone"
-                                    android:textColor="@color/black"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.724"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/pt_name"
-                                    app:layout_constraintVertical_bias="0.004" />
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:text="Nume"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.028"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.028" />
 
-                                <TextView
-                                    android:id="@+id/cv31_tv_name"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                            <TextView
+                                android:id="@+id/pt_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:ems="10"
+                                android:text="Dr. Boros Titusz"
+                                android:textSize="24sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.117"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cv31_tv_name"
+                                app:layout_constraintVertical_bias="0.0" />
 
-                                    android:layout_marginStart="8dp"
-                                    android:text="Name"
-                                    android:textColor="@color/black"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.028"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.028" />
+                            <TextView
+                                android:id="@+id/pt_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:text="+40 7134 400 555"
+                                android:textSize="24sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.157"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cv31_tv_phone"
+                                app:layout_constraintVertical_bias="0.0" />
 
-                                <TextView
-                                    android:id="@+id/pt_name"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="8dp"
-                                    android:ems="10"
-                                    android:text="Dr. Boros Titusz"
-                                    android:textSize="24sp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.117"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/cv31_tv_name"
-                                    app:layout_constraintVertical_bias="0.0" />
+                            <TextView
+                                android:id="@+id/cv31_tv_email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="16dp"
+                                android:text="E-mail"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.028"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/pt_phone"
+                                app:layout_constraintVertical_bias="0.0" />
 
-                                <TextView
-                                    android:id="@+id/pt_phone"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:ems="10"
-                                    android:text="+40 7134 400 555"
-                                    android:textSize="24sp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.157"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/cv31_tv_phone"
-                                    app:layout_constraintVertical_bias="0.0" />
+                            <TextView
+                                android:id="@+id/pt_email"
+                                android:layout_width="342dp"
+                                android:layout_height="35dp"
+                                android:ems="10"
+                                android:text="boros.titusz@medicalclinic.com"
+                                android:textSize="20sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.375"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cv31_tv_email"
+                                app:layout_constraintVertical_bias="0.038" />
 
-                                <TextView
-                                    android:id="@+id/cv31_tv_email"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginTop="8dp"
-                                    android:text="E-mail"
-                                    android:textColor="@color/black"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.028"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/pt_phone"
-                                    app:layout_constraintVertical_bias="0.0" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
 
-                                <TextView
-                                    android:id="@+id/pt_email"
-                                    android:layout_width="342dp"
-                                    android:layout_height="35dp"
-                                    android:ems="10"
-                                    android:text="boros.titusz@medicalclinic.com"
-                                    android:textSize="20sp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.375"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/cv31_tv_email"
-                                    app:layout_constraintVertical_bias="0.038" />
+                    <ImageView
+                        android:id="@+id/img_add"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginBottom="115dp"
+                        android:src="@drawable/expand"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toTopOf="@+id/cardView31"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.928"
+                        app:layout_constraintStart_toEndOf="@+id/textView7"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.571" />
 
-                                <TextView
-                                    android:id="@+id/ptOffice"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="16dp"
-                                    android:layout_marginEnd="138dp"
-                                    android:layout_marginBottom="84dp"
-                                    android:ems="10"
-                                    android:textSize="24sp"
-                                    android:text="Section B, Level 4"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.0"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/textView13"
-                                    app:layout_constraintVertical_bias="0.0" />
-
-                                <TextView
-                                    android:id="@+id/textView13"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Office"
-                                    android:textColor="@color/black"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.044"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/pt_email"
-                                    app:layout_constraintVertical_bias="0.0" />
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </androidx.cardview.widget.CardView>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:id="@+id/img_remove"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="4dp"
+                        android:src="@drawable/minimize"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toTopOf="@+id/cardView31"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.915"
+                        app:layout_constraintStart_toEndOf="@+id/textView7"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
 
 
@@ -291,7 +284,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="32dp"
                                 android:layout_marginEnd="334dp"
-                                android:text="Title"
+                                android:text="Titlu"
                                 android:textSize="24sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -336,7 +329,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="32dp"
                                 android:layout_marginEnd="334dp"
-                                android:text="Title"
+                                android:text="Titlu"
                                 android:textSize="24sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -363,7 +356,7 @@
                         android:id="@+id/tv_cv2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Recommandations"
+                        android:text="Recomandări"
                         android:textColor="@color/black"
                         android:textSize="24sp"
                         app:layout_constraintBottom_toTopOf="@+id/cv1_in_cv2"

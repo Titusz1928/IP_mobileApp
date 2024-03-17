@@ -42,9 +42,9 @@
                     android:id="@+id/arrow"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="50dp"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/arrow_black"
+                    android:layout_marginTop="50dp"
+                    app:srcCompat="@drawable/arrow_down_white"
 
                     />
 
@@ -71,11 +71,11 @@
 
 
                             <Button
-                                android:id="@+id/btnBack"
+                                android:id="@+id/btLogin"
                                 android:layout_width="255dp"
                                 android:layout_height="88dp"
                                 android:backgroundTint="@color/background"
-                                android:text="Log in"
+                                android:text="Conectare"
                                 android:textSize="34sp"
                                 app:cornerRadius="5dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -106,7 +106,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:backgroundTint="@color/black"
-                                    android:hint="Password"
+                                    android:hint="Parolă"
                                     android:inputType="textPassword"
                                     android:textColor="@color/black" />
                             </com.google.android.material.textfield.TextInputLayout>
@@ -143,7 +143,7 @@
                                 android:layout_height="wrap_content"
                                 android:background="@color/gray"
                                 android:padding="5dp"
-                                android:text="I forgot my password"
+                                android:text="Am uitat parola"
                                 android:textColor="@color/white"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -156,7 +156,7 @@
                                 android:id="@+id/checkBox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Remember me"
+                                android:text="Ține-mă minte"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.094"
@@ -168,7 +168,7 @@
                                 android:id="@+id/textView3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Welcome!"
+                                android:text="Bine ai venit!"
                                 android:textSize="32sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
