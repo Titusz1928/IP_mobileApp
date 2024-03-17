@@ -30,7 +30,7 @@ class ProfileFragment : Fragment() {
 
         to_vizualizare.setOnClickListener {
 
-            val intent = Intent(requireContext(), AlarmsActivity::class.java)
+            val intent = Intent(requireContext(), VisualActivity::class.java)
             startActivity(intent)
         }
 

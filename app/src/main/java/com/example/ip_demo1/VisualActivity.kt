@@ -1,11 +1,14 @@
 package com.example.ip_demo1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.TableRow
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class VisualActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +35,17 @@ class VisualActivity : AppCompatActivity() {
                 // Do nothing
             }
         }
+
+        val to_profile=findViewById<FloatingActionButton>(R.id.btBack_to_home)
+
+
+
+        to_profile.setOnClickListener {
+            val intent = Intent(this, Menu_Activity::class.java)
+            startActivity(intent)
+        }
+
+
 
     }
 }
