@@ -24,6 +24,10 @@ class Menu_Activity : AppCompatActivity() {
                     replaceFragment(ProfileFragment())
                     true
                 }
+                R.id.chat->{
+                    replaceFragment(ChatFragment())
+                    true
+                }
                 R.id.settings->{
                     replaceFragment(SettingsFragment())
                     true

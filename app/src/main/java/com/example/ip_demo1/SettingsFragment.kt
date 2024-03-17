@@ -21,9 +21,17 @@ class SettingsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
         val buttonLogout = view.findViewById<Button>(R.id.button_logout)
+        val buttonChangePassword = view.findViewById<Button>(R.id.button_resetpassword)
+
         buttonLogout.setOnClickListener {
             // Navigate to MainActivity
             val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonChangePassword.setOnClickListener {
+            // Navigate to MainActivity
+            val intent = Intent(requireContext(), ChangePasswordActivity::class.java)
             startActivity(intent)
         }
 
