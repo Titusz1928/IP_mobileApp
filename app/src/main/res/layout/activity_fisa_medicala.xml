@@ -374,6 +374,7 @@
                     android:layout_height="match_parent">
 
                     <TableRow
+                        android:id="@+id/row1"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/gray_black_border"
                         android:padding="5dp">

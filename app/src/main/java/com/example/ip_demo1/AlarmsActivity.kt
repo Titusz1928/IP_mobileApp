@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class recommendationActivity : AppCompatActivity() {
+class AlarmsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recommendation)
+        setContentView(R.layout.activity_alarms)
 
         val button=findViewById<FloatingActionButton>(R.id.btBack_to_home)
 
@@ -16,5 +16,6 @@ class recommendationActivity : AppCompatActivity() {
             val intent = Intent(this, Menu_Activity::class.java)
             startActivity(intent)
         }
+
     }
 }

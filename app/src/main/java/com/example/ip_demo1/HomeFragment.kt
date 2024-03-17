@@ -50,10 +50,17 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         val to_fisa_medicala = view.findViewById<CardView>(R.id.cardView_fisamedicala)
+        val to_alarm = view.findViewById<CardView>(R.id.cardView_alarme)
 
         to_fisa_medicala.setOnClickListener {
-            // Navigate to MainActivity
+
             val intent = Intent(requireContext(), FisaMedicalaActivity::class.java)
+            startActivity(intent)
+        }
+
+        to_alarm.setOnClickListener {
+
+            val intent = Intent(requireContext(), AlarmsActivity::class.java)
             startActivity(intent)
         }
 
