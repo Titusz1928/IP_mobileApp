@@ -6,9 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.cardview.widget.CardView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -49,8 +47,8 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val to_fisa_medicala = view.findViewById<CardView>(R.id.cardView_fisamedicala)
-        val to_alarm = view.findViewById<CardView>(R.id.cardView_alarme)
+        val to_fisa_medicala = view.findViewById<CardView>(R.id.cardView_fisa_medicala)
+        val to_alarm = view.findViewById<CardView>(R.id.cardView_alarm)
 
         to_fisa_medicala.setOnClickListener {
 

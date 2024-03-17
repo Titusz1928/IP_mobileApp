@@ -367,7 +367,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView_fisamedicala"
+                android:id="@+id/cardView_fisa_medicala"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="10dp"
@@ -380,7 +380,7 @@
                     android:background="@drawable/white_subtle_border">
 
                     <TextView
-                        android:id="@+id/textView_fisamedicala"
+                        android:id="@+id/textView_fisa_medicala"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bottom_border_on_white"
@@ -394,14 +394,14 @@
                         app:layout_constraintVertical_bias="0.469" />
 
                     <ImageView
-                        android:id="@+id/img_fisa_medicala"
+                        android:id="@+id/img_actualizare"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:src="@drawable/icon_fisa_medicala"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.766"
-                        app:layout_constraintStart_toEndOf="@+id/textView_fisamedicala"
+                        app:layout_constraintStart_toEndOf="@+id/textView_fisa_medicala"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.509" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -409,7 +409,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView_alarme"
+                android:id="@+id/cardView_alarm"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="10dp"
@@ -436,7 +436,7 @@
                         app:layout_constraintVertical_bias="0.469" />
 
                     <ImageView
-                        android:id="@+id/img_alarma"
+                        android:id="@+id/img_alarm"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:src="@drawable/icon_alarm"

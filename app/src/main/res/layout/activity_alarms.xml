@@ -55,7 +55,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv1"
                     android:layout_width="match_parent"
-                    android:layout_height="950dp"
+                    android:layout_height="500dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/white">
 
@@ -77,7 +77,7 @@
                                     android:layout_weight="5"
                                     android:background="@drawable/bordered_lightgreen"
                                     android:padding="10dp"
-                                    android:text="Tensiune arteriala"
+                                    android:text="Gaz"
                                     android:textSize="24sp">
 
                                 </TextView>
@@ -100,7 +100,7 @@
                                     android:layout_weight="5"
                                     android:background="@drawable/bordered_lightgreen"
                                     android:padding="10dp"
-                                    android:text="Puls"
+                                    android:text="Creșterea temperaturii"
                                     android:textSize="24sp">
 
                                 </TextView>
@@ -123,7 +123,7 @@
                                     android:layout_weight="5"
                                     android:background="@drawable/bordered_lightgreen"
                                     android:padding="10dp"
-                                    android:text="T. corporală"
+                                    android:text="Parametrii fiziologici"
                                     android:textSize="24sp">
 
                                 </TextView>
@@ -146,7 +146,7 @@
                                     android:layout_weight="5"
                                     android:background="@drawable/bordered_lightgreen"
                                     android:padding="10dp"
-                                    android:text="Greutate"
+                                    android:text="Anomalii"
                                     android:textSize="24sp">
 
                                 </TextView>
@@ -169,122 +169,7 @@
                                     android:layout_weight="5"
                                     android:background="@drawable/bordered_lightgreen"
                                     android:padding="10dp"
-                                    android:text="Glicernie"
-                                    android:textSize="24sp">
-
-                                </TextView>
-
-                                <CheckBox
-                                    android:id="@+id/myCheckBox"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:clickable="false" />
-
-                            </TableRow>
-
-                            <TableRow
-                                android:layout_marginTop="20dp"
-                                android:background="@drawable/white_subtle_border">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="5"
-                                    android:background="@drawable/bordered_lightgreen"
-                                    android:padding="10dp"
-                                    android:text="Lumină"
-                                    android:textSize="24sp">
-
-                                </TextView>
-
-                                <CheckBox
-                                    android:id="@+id/myCheckBox"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:clickable="false" />
-
-                            </TableRow>
-
-                            <TableRow
-                                android:layout_marginTop="20dp"
-                                android:background="@drawable/white_subtle_border">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="5"
-                                    android:background="@drawable/bordered_lightgreen"
-                                    android:padding="10dp"
-                                    android:text="Prezență gaz"
-                                    android:textSize="24sp">
-
-                                </TextView>
-
-                                <CheckBox
-                                    android:id="@+id/myCheckBox"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:clickable="false" />
-
-                            </TableRow>
-
-                            <TableRow
-                                android:layout_marginTop="20dp"
-                                android:background="@drawable/white_subtle_border">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="5"
-                                    android:background="@drawable/bordered_lightgreen"
-                                    android:padding="10dp"
-                                    android:text="Tensiune arteriala"
-                                    android:textSize="24sp">
-
-                                </TextView>
-
-                                <CheckBox
-                                    android:id="@+id/myCheckBox"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:clickable="false" />
-
-                            </TableRow>
-
-                            <TableRow
-                                android:layout_marginTop="20dp"
-                                android:background="@drawable/white_subtle_border">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="5"
-                                    android:background="@drawable/bordered_lightgreen"
-                                    android:padding="10dp"
-                                    android:text="Umiditate"
-                                    android:textSize="24sp">
-
-                                </TextView>
-
-                                <CheckBox
-                                    android:id="@+id/myCheckBox"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:clickable="false" />
-
-                            </TableRow>
-
-                            <TableRow
-                                android:layout_marginTop="20dp"
-                                android:background="@drawable/white_subtle_border">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="5"
-                                    android:background="@drawable/bordered_lightgreen"
-                                    android:padding="10dp"
-                                    android:text="Proximitate"
+                                    android:text="Sistem căzut"
                                     android:textSize="24sp">
 
                                 </TextView>
@@ -310,12 +195,13 @@
                 android:id="@+id/cv_Bottom"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="60dp"
                 app:cardBackgroundColor="@color/lightgreen">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    >
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/btBack_to_home"

@@ -13,7 +13,7 @@ class recommendationActivity : AppCompatActivity() {
         val button=findViewById<FloatingActionButton>(R.id.btBack_to_home)
 
         button.setOnClickListener {
-            val intent = Intent(this, Menu_Activity::class.java)
+            val intent = Intent(this, FisaMedicalaActivity::class.java)
             startActivity(intent)
         }
     }
