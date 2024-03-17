@@ -207,10 +207,10 @@
                     android:id="@+id/tvBottomINfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Clinica Medicala 2024"
+                    android:layout_marginTop="40dp"
+                    android:text="Testing"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:layout_marginTop="40dp"/>
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </ScrollView>
