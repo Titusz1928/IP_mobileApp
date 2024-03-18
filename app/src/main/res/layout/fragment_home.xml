@@ -97,7 +97,8 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_vertical"
-                        android:src="@drawable/expand" />
+                        android:src="@drawable/expand"
+                       />
 
                 </TableRow>
 
@@ -376,51 +377,6 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintHorizontal_bias="0.971"
                                     app:layout_constraintStart_toStartOf="@+id/textView_recom3title"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.452" />
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cv_recom4"
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@color/lightgreen"
-                            app:cardCornerRadius="30dp">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/white_subtle_border">
-
-                                <TextView
-                                    android:id="@+id/textView_recom4title"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center_vertical"
-                                    android:text="Titlu"
-                                    android:textSize="24sp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.122"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.333" />
-
-                                <TextView
-                                    android:id="@+id/textView_recom4date"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="24dp"
-                                    android:gravity="center_vertical"
-                                    android:text="25/04/2024"
-                                    android:textSize="20sp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.971"
-                                    app:layout_constraintStart_toStartOf="@+id/textView_recom4title"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintVertical_bias="0.452" />
 

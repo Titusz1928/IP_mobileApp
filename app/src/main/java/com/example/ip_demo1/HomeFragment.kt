@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-
+        //doctor info
         val expandDoctorButton=view.findViewById<ImageView>(R.id.imageView_btExpand)
         val doctorInfoRow1a = view.findViewById<TableRow>(R.id.doctor_info_row1a)
         val doctorInfoRow1b = view.findViewById<TableRow>(R.id.doctor_info_row1b)
@@ -57,6 +57,13 @@ class HomeFragment : Fragment() {
         val doctorInfoRow2b = view.findViewById<TableRow>(R.id.doctor_info_row2b)
         val doctorInfoRow3a = view.findViewById<TableRow>(R.id.doctor_info_row3a)
         val doctorInfoRow3b = view.findViewById<TableRow>(R.id.doctor_info_row3b)
+
+        //recoms
+        val buttonRecom1 = view.findViewById<CardView>(R.id.cv_recom1)
+
+        //card menus
+        val to_fisa_medicala = view.findViewById<CardView>(R.id.cardView_fisa_medicala)
+        val to_alarm = view.findViewById<CardView>(R.id.cardView_alarm)
 
         expandDoctorButton.setOnClickListener {
             if (doctorInfoRow1a.visibility == View.GONE) {
@@ -78,8 +85,11 @@ class HomeFragment : Fragment() {
             }
         }
 
-        val to_fisa_medicala = view.findViewById<CardView>(R.id.cardView_fisa_medicala)
-        val to_alarm = view.findViewById<CardView>(R.id.cardView_alarm)
+        buttonRecom1.setOnClickListener{
+            val intent = Intent(requireContext(), recommendationActivity::class.java)
+            startActivity(intent)
+        }
+
 
         to_fisa_medicala.setOnClickListener {
 

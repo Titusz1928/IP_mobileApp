@@ -38,7 +38,7 @@
                             android:fontFamily="sans-serif-light"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="Actualizare date"
+                            android:text="Vizualizare date"
                             android:textColor="@color/black"
                             android:textSize="24sp"
                             android:textStyle="bold"
