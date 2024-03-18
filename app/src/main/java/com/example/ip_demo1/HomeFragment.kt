@@ -1,11 +1,14 @@
 package com.example.ip_demo1
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
+import android.widget.ImageView
+import android.widget.TableRow
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -43,7 +46,55 @@ class HomeFragment : Fragment() {
         getData()*/
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+
+        val expandDoctorButton=view.findViewById<ImageView>(R.id.imageView_btExpand)
+        val doctorInfoRow1a = view.findViewById<TableRow>(R.id.doctor_info_row1a)
+        val doctorInfoRow1b = view.findViewById<TableRow>(R.id.doctor_info_row1b)
+        val doctorInfoRow2a = view.findViewById<TableRow>(R.id.doctor_info_row2a)
+        val doctorInfoRow2b = view.findViewById<TableRow>(R.id.doctor_info_row2b)
+        val doctorInfoRow3a = view.findViewById<TableRow>(R.id.doctor_info_row3a)
+        val doctorInfoRow3b = view.findViewById<TableRow>(R.id.doctor_info_row3b)
+
+        expandDoctorButton.setOnClickListener {
+            if (doctorInfoRow1a.visibility == View.GONE) {
+                doctorInfoRow1a.visibility = View.VISIBLE
+                doctorInfoRow1b.visibility = View.VISIBLE
+                doctorInfoRow2a.visibility = View.VISIBLE
+                doctorInfoRow2b.visibility = View.VISIBLE
+                doctorInfoRow3a.visibility = View.VISIBLE
+                doctorInfoRow3b.visibility = View.VISIBLE
+                expandDoctorButton.setImageResource(R.drawable.minimize)
+            } else {
+                doctorInfoRow1a.visibility = View.GONE
+                doctorInfoRow1b.visibility = View.GONE
+                doctorInfoRow2a.visibility = View.GONE
+                doctorInfoRow2b.visibility = View.GONE
+                doctorInfoRow3a.visibility = View.GONE
+                doctorInfoRow3b.visibility = View.GONE
+                expandDoctorButton.setImageResource(R.drawable.expand)
+            }
+        }
+
+        val to_fisa_medicala = view.findViewById<CardView>(R.id.cardView_fisa_medicala)
+        val to_alarm = view.findViewById<CardView>(R.id.cardView_alarm)
+
+        to_fisa_medicala.setOnClickListener {
+
+            val intent = Intent(requireContext(), FisaMedicalaActivity::class.java)
+            startActivity(intent)
+        }
+
+        to_alarm.setOnClickListener {
+
+            val intent = Intent(requireContext(), AlarmsActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        return view
     }
 
     private fun getData(){

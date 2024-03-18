@@ -13,19 +13,43 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".ChangeInformation"
+            android:exported="false" />
+        <activity
+            android:name=".s_chat1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".VisualActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActualizareActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AlarmsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FisaMedicalaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".recommendationActivity"
+            android:exported="false" />
+        <activity
             android:name=".ResetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".activity_reset_password3"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Menu_Activity"
             android:exported="false" />
         <activity
             android:name=".activity_reset_password2"
             android:exported="false" />
         <activity
-            android:name=".Menu_Activity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +57,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

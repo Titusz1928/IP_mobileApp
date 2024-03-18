@@ -4,12 +4,38 @@
 
     <!-- String resource for the background image description -->
     <string name="background_image_description">Background Image</string>
-    <string name="reset_pswd_info"> To reset your password you need to open the link sent to the email adress specified below!</string>
-    <string name="reset_pswd_info2"> Please enter the email address associated with your account!</string>
+    <string name="reset_pswd_info"> Pentru a-ți reseta parola, trebuie să deschizi link-ul trimis la adresa de email specificată mai jos!</string>
+    <string name="reset_pswd_info2"> Te rog să introduci adresa de email asociată contului tău!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="home_fragment">HOME</string>
-    <string name="profile_fragment">PROFILE</string>
-    <string name="settings_fragment">SETTINGS</string>
-    <string name="reset_pswd_code_info">We have sent a code to your email! Enter it to continue.</string>
+    <string name="home_fragment">ACASĂ</string>
+    <string name="profile_fragment">PROFIL</string>
+    <string name="chat_fragment">CHAT</string>
+    <string name="settings_fragment">SETĂRI</string>
+    <string name="reset_pswd_code_info">Am trimis un cod pe adresa ta de email! Introdu-l pentru a continua.</string>
+    <string name="recom_test"> Gestionarea stresului și odihna adecvată: Încearcă să gestionezi stresul prin tehnici de relaxare,
+        cum ar fi meditația sau respirația profundă.
+        Asigură-te că dormi suficient pentru a-ți menține echilibrul hormonal și nivelul de energie.
+        Meditația și respirația profundă sunt doar două dintre tehnicile pe care le poți încerca pentru a-ți calma mintea și corpul în timpul momentelor tensionate.</string>
+
+    <string name="long_text">În calitate de medic, îmi doresc să subliniez importanța prioritizării sănătății tale.
+Este esențial să acorzi atenție semnelor și simptomelor care pot indica probleme de sănătate, și să nu amâni vizitele la medic.
+Prevenția este cheia pentru menținerea unei stări optime de sănătate,
+iar adoptarea unui stil de viață sănătos poate avea un impact semnificativ asupra bunăstării tale generale. Nu ezita să consulți
+un specialist pentru orice îngrijorare sau întrebare legată de sănătatea ta.
+Împreună, putem lucra pentru a asigura că te afli pe drumul cel mai bun către o viață sănătoasă și fericită.
+    În calitate de medic, îmi doresc să subliniez importanța prioritizării sănătății tale.
+Este esențial să acorzi atenție semnelor și simptomelor care pot indica probleme de sănătate, și să nu amâni vizitele la medic.
+Prevenția este cheia pentru menținerea unei stări optime de sănătate,
+iar adoptarea unui stil de viață sănătos poate avea un impact semnificativ asupra bunăstării tale generale. Nu ezita să consulți
+un specialist pentru orice îngrijorare sau întrebare legată de sănătatea ta.
+Împreună, putem lucra pentru a asigura că te afli pe drumul cel mai bun către o viață sănătoasă și fericită.
+    În calitate de medic, îmi doresc să subliniez importanța prioritizării sănătății tale.
+Este esențial să acorzi atenție semnelor și simptomelor care pot indica probleme de sănătate, și să nu amâni vizitele la medic.
+Prevenția este cheia pentru menținerea unei stări optime de sănătate,
+iar adoptarea unui stil de viață sănătos poate avea un impact semnificativ asupra bunăstării tale generale. Nu ezita să consulți
+un specialist pentru orice îngrijorare sau întrebare legată de sănătatea ta.
+Împreună, putem lucra pentru a asigura că te afli pe drumul cel mai bun către o viață sănătoasă și fericit</string>
+
+    <string name="recom_title"> Gestionarea stresului </string>
 </resources>

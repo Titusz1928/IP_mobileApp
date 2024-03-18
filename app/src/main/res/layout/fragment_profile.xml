@@ -1,17 +1,467 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/green_background_spring"
     tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:text="@string/profile_fragment" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/cv1"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Datele mele"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv1"
+                android:layout_width="match_parent"
+                android:layout_height="560dp"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TableRow
+                            android:background="@color/lightgreen"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:background="@drawable/bordered_lightgreen"
+                                android:padding="10dp"
+                                android:text="Tensiune arteriala"
+                                android:textSize="24sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/white_black_border"
+                                android:text="0"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                >
+
+                            </TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:background="@color/lightgreen">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="Puls"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                android:background="@drawable/bordered_lightgreen"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/white_black_border"
+                                android:text="0"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                >
+
+                            </TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:background="@color/lightgreen">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="T. corporala"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                android:background="@drawable/bordered_lightgreen"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/white_black_border"
+                                android:text="0"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                >
+
+                            </TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:background="@color/lightgreen">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="Greutate"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                android:background="@drawable/bordered_lightgreen"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/white_black_border"
+                                android:text="0"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                >
+
+                            </TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:background="@color/lightgreen">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="Glicernie"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                android:background="@drawable/bordered_lightgreen"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/white_black_border"
+                                android:text="0"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                >
+
+                            </TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:background="@color/lightgreen">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="Lumina"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                android:background="@drawable/bordered_lightgreen"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/white_black_border"
+                                android:text="0"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                >
+
+                            </TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:background="@color/lightgreen">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="T. ambientala"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                android:background="@drawable/bordered_lightgreen"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/white_black_border"
+                                android:text="0"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                >
+
+                            </TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:background="@color/lightgreen">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="Prezenta gaz"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                android:background="@drawable/bordered_lightgreen"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/white_black_border"
+                                android:text="NU"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                >
+
+                            </TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:background="@color/lightgreen">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="Umiditate"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                android:background="@drawable/bordered_lightgreen"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/white_black_border"
+                                android:text="0"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                >
+
+                            </TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:background="@color/lightgreen">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="Proximitate"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                android:background="@drawable/bordered_lightgreen"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/white_black_border"
+                                android:text="0"
+                                android:padding="10dp"
+                                android:textSize="24sp"
+                                >
+
+                            </TextView>
+
+                        </TableRow>
+
+                    </TableLayout>
+                </RelativeLayout>
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_act"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="30dp"
+                android:layout_margin="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/white_subtle_border">
+
+                    <TextView
+                        android:id="@+id/textView_actualizare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom_border_on_white"
+                        android:text="Actualizare date"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.08"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.469" />
+
+                    <ImageView
+                        android:id="@+id/img_actualizare"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/icon_actualizare"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.766"
+                        app:layout_constraintStart_toEndOf="@+id/textView_actualizare"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.509" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_viz"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="30dp"
+                android:layout_margin="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/white_subtle_border">
+
+                    <TextView
+                        android:id="@+id/textView_vizualizare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom_border_on_white"
+                        android:text="Vizualizare date"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.08"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.469" />
+
+                    <ImageView
+                        android:id="@+id/img_vizualizare"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/icon_visualization"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.852"
+                        app:layout_constraintStart_toEndOf="@+id/textView_vizualizare"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.363" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView1"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/white"
+                app:cardCornerRadius="0dp"></androidx.cardview.widget.CardView>
+
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/info_white"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="330dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
