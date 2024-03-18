@@ -26,14 +26,14 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/border_top_green">
+                        android:background="@drawable/green_subtle_border">
 
                         <TextView
                             android:id="@+id/tv_vis_title"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="@drawable/border_top_green"
+                            android:background="@color/foreground"
                             android:fontFamily="sans-serif-light"
                             android:gravity="center"
                             android:text="Chat"
@@ -284,11 +284,11 @@
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
-                            android:layout_height="80dp">
+                            android:layout_height="30dp">
 
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"/>
+                                android:layout_height="match_parent" />
                         </androidx.cardview.widget.CardView>
                     </TableRow>
 
@@ -299,7 +299,7 @@
                     android:id="@+id/cv_Bottom"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:layout_marginTop="750dp">
+                    android:layout_marginTop="700dp">
 
                 </androidx.cardview.widget.CardView>
 
