@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
             android:layout_marginLeft="10dp"
             android:background="@drawable/white_subtle_border"
             android:text="Boros Titusz"
-            android:textSize="24sp"></TextView>
+            android:textSize="22sp"></TextView>
 
 
     </RelativeLayout>
