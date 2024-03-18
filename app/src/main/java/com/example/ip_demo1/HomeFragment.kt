@@ -93,7 +93,7 @@ class HomeFragment : Fragment() {
 
         to_fisa_medicala.setOnClickListener {
 
-            val intent = Intent(requireContext(), FisaMedicalaActivity::class.java)
+            val intent = Intent(requireContext(), FisaMedicalaWebActivity::class.java)
             startActivity(intent)
         }
 
