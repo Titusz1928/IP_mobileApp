@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 
 
 class SettingsFragment : Fragment() {
@@ -22,6 +23,13 @@ class SettingsFragment : Fragment() {
 
         val buttonLogout = view.findViewById<Button>(R.id.button_logout)
         val buttonChangePassword = view.findViewById<Button>(R.id.button_resetpassword)
+        val buttonChangeName=view.findViewById<ImageView>(R.id.imageView_nume)
+
+        buttonChangeName.setOnClickListener{
+            val intent = Intent(requireContext(), ChangeInformation::class.java)
+            startActivity(intent)
+        }
+
 
         buttonLogout.setOnClickListener {
             // Navigate to MainActivity

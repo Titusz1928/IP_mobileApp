@@ -13,6 +13,9 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".ChangeInformation"
+            android:exported="false" />
+        <activity
             android:name=".s_chat1Activity"
             android:exported="false" />
         <activity
