@@ -25,8 +25,9 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv2"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_weight="1"
+                    android:background="@color/foreground"
                     app:cardBackgroundColor="@color/background"
                     app:layout_constraintTop_toBottomOf="@+id/cv1">
 
@@ -38,12 +39,13 @@
                             android:id="@+id/textView2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/border_top_green"
+                            android:background="@drawable/green_subtle_border"
                             android:fontFamily="sans-serif-light"
                             android:gravity="center"
+                            android:padding="5dp"
                             android:text="Setări"
                             android:textColor="@color/black"
-                            android:textSize="24sp"
+                            android:textSize="28sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"

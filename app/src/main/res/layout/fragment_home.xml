@@ -106,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:background="@color/lightgreen"
+                    android:background="@color/lightgray"
                     android:visibility="gone">
 
                     <TextView
@@ -140,7 +140,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:background="@color/lightgreen"
+                    android:background="@color/lightgray"
                     android:visibility="gone">
 
                     <TextView
@@ -174,7 +174,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:background="@color/lightgreen"
+                    android:background="@color/lightgray"
                     android:visibility="gone">
 
                     <TextView
