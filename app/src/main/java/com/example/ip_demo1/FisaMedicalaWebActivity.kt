@@ -10,7 +10,7 @@ class FisaMedicalaWebActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fisa_medicala_web)
 
-        val webview = findViewById<WebView>(R.id.webwiew)
+        val webview = findViewById<WebView>(R.id.llWebView)
 
         // Open the HTML file using resources
         val inputStream: InputStream = resources.openRawResource(R.raw.fisa_pacient_pv)

@@ -17,7 +17,7 @@ class ChatFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_chat, container, false)
 
-        val to_s_chat = view.findViewById<CardView>(R.id.cardView_chat2)
+        val to_s_chat = view.findViewById<CardView>(R.id.llChat2CardView)
 
         to_s_chat.setOnClickListener {
             val intent = Intent(requireContext(), s_chat1Activity::class.java)

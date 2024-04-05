@@ -10,7 +10,7 @@ class ChangeInformation : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_change_information)
 
-        val buttonSaveData=findViewById<Button>(R.id.bt_save_data)
+        val buttonSaveData=findViewById<Button>(R.id.CINbcvSaveButton)
 
         buttonSaveData.setOnClickListener{
             val intent = Intent(this, Menu_Activity::class.java)

@@ -43,13 +43,13 @@
             android:name=".ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_reset_password3"
+            android:name=".activity_reset_password2"
             android:exported="false" />
         <activity
             android:name=".Menu_Activity"
             android:exported="false" />
         <activity
-            android:name=".activity_reset_password2"
+            android:name=".activity_reset_password3"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

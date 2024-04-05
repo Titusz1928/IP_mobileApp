@@ -12,7 +12,7 @@ class Menu_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        bottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView = findViewById(R.id.clBottomNavigationView)
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId){
@@ -40,6 +40,6 @@ class Menu_Activity : AppCompatActivity() {
 
     }
     private fun replaceFragment(fragment: Fragment){
-        supportFragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.clFrameLayout, fragment).commit()
     }
 }

@@ -11,8 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val buttonLogin=findViewById<Button>(R.id.btLogin)
-        val buttonForgot=findViewById<TextView>(R.id.tvForgotPassword)
+        val buttonLogin=findViewById<Button>(R.id.MAINifcvLoginButton)
+        val buttonForgot=findViewById<TextView>(R.id.MAINifcvForgotPasswordText)
 
 
         buttonLogin.setOnClickListener {

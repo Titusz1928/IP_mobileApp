@@ -11,7 +11,7 @@ class ActualizareActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actualizare)
 
-        val saveButton = findViewById<Button>(R.id.bt_save_data)
+        val saveButton = findViewById<Button>(R.id.ACTbcvSaveButton)
 
 
         saveButton.setOnClickListener {

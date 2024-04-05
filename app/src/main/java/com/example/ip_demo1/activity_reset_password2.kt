@@ -10,8 +10,8 @@ class activity_reset_password2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reset_password2)
 
-        val buttonBack=findViewById<Button>(R.id.btBack)
-        val buttonConfirm=findViewById<Button>(R.id.btConfirm)
+        val buttonBack=findViewById<Button>(R.id.RPA2ifcvBackButton)
+        val buttonNext=findViewById<Button>(R.id.RPA2ifcvConfirmButton)
 
 
         buttonBack.setOnClickListener{
@@ -19,9 +19,10 @@ class activity_reset_password2 : AppCompatActivity() {
             startActivity(intent)
         }
 
-        buttonConfirm.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+        buttonNext.setOnClickListener{
+            val intent = Intent(this, activity_reset_password3::class.java)
             startActivity(intent)
         }
+
     }
 }

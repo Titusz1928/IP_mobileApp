@@ -10,10 +10,10 @@ class recommendationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recommendation)
 
-        val button=findViewById<FloatingActionButton>(R.id.btBack_to_home)
+        val button=findViewById<FloatingActionButton>(R.id.RECbcvBackButton)
 
         button.setOnClickListener {
-            val intent = Intent(this, FisaMedicalaActivity::class.java)
+            val intent = Intent(this, Menu_Activity::class.java)
             startActivity(intent)
         }
     }

@@ -13,9 +13,9 @@ class s_chat1Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_schat1)
 
-        val back=findViewById<FloatingActionButton>(R.id.btBack_to_chat)
+        val back=findViewById<FloatingActionButton>(R.id.SCHbcvBackButton)
 
-        val nestedScrollView = findViewById<NestedScrollView>(R.id.nsv1)
+        val nestedScrollView = findViewById<NestedScrollView>(R.id.clNestedScrollView)
 
         nestedScrollView.post {
             nestedScrollView.fullScroll(View.FOCUS_DOWN)

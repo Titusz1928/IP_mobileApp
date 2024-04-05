@@ -19,8 +19,8 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
-        val to_actualizare = view.findViewById<CardView>(R.id.cardView_act)
-        val to_vizualizare = view.findViewById<CardView>(R.id.cardView_viz)
+        val to_actualizare = view.findViewById<CardView>(R.id.llActualizareCardView)
+        val to_vizualizare = view.findViewById<CardView>(R.id.llVizualizareCardView)
 
         to_actualizare.setOnClickListener {
 

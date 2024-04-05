@@ -10,7 +10,7 @@ class AlarmsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alarms)
 
-        val button=findViewById<FloatingActionButton>(R.id.btBack_to_home)
+        val button=findViewById<FloatingActionButton>(R.id.ALAbcvBackButton)
 
         button.setOnClickListener {
             val intent = Intent(this, Menu_Activity::class.java)

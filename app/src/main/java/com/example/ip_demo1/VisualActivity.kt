@@ -36,7 +36,7 @@ class VisualActivity : AppCompatActivity() {
             }
         }
 
-        val to_profile=findViewById<FloatingActionButton>(R.id.btBack_to_home)
+        val to_profile=findViewById<FloatingActionButton>(R.id.VISbcvBackButton)
 
 
 

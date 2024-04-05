@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:background="@drawable/white_subtle_border"
-            android:text="Boros Titusz"
+            android:text="John Doe"
             android:textSize="22sp"></TextView>
 
 

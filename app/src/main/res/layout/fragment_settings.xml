@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ProfileFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightgray"
-    tools:context=".ProfileFragment">
+    android:background="@color/lightgray" >
 
-    <ScrollView
+    <TableLayout
+        android:id="@+id/svTableLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="visible">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
 
             <!--first row-->
             <TableRow
+                android:id="@+id/tlTopRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cv2"
+                    android:id="@+id/trTopCardView"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
@@ -32,64 +31,54 @@
                     app:layout_constraintTop_toBottomOf="@+id/cv1">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/tcvConstraintLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView2"
+                            android:id="@+id/tcvTitleText"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/green_subtle_border"
-                            android:fontFamily="sans-serif-light"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Setări"
-                            android:textColor="@color/black"
-                            android:textSize="28sp"
-                            android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:background="@drawable/green_subtle_border"
+
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="@color/black"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:text="@string/SETtcvTitleText" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </androidx.cardview.widget.CardView>
+
             </TableRow>
 
             <!--Second row-->
-            <TableRow android:layout_marginTop="10dp">
+            <TableRow
+                android:id="@+id/tlInfoUserRow"
+                android:layout_marginTop="10dp">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cv1"
+                    android:id="@+id/iurCardView"
                     android:layout_width="0dp"
                     android:layout_height="500dp"
                     android:layout_margin="4dp"
                     android:layout_weight="0.8"
-                    android:background="@color/foreground"
+                    app:cardCornerRadius="0dp"
                     app:cardBackgroundColor="@color/foreground"
-                    app:cardCornerRadius="0dp">
+                    android:background="@color/foreground" >
 
-                    <!-- Add your content here -->
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/iucvConstraintLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-
-                        <EditText
-                            android:id="@+id/etNumber"
-                            android:layout_width="250dp"
-                            android:layout_height="64dp"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/bottom_border"
-                            android:ems="10"
-                            android:inputType="text"
-                            android:text="Numărul"
-                            android:textSize="24sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.246"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.913" />
 
                         <EditText
                             android:id="@+id/etStrada"
@@ -98,15 +87,15 @@
                             android:layout_marginTop="8dp"
                             android:background="@drawable/bottom_border"
                             android:ems="10"
-                            android:inputType="text"
-                            android:text="Strada"
-                            android:textSize="24sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.246"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.764" />
+                            app:layout_constraintVertical_bias="0.764"
+                            android:inputType="text"
+                            android:textSize="24sp"
+                            android:text="@string/SETetStrada"/>
 
                         <EditText
                             android:id="@+id/etCity"
@@ -116,14 +105,14 @@
                             android:background="@drawable/bottom_border"
                             android:ems="10"
                             android:inputType="text"
-                            android:text="Timișoara"
-                            android:textSize="24sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.246"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.614" />
+                            app:layout_constraintVertical_bias="0.614"
+                            android:textSize="24sp"
+                            android:text="@string/SETetCity"/>
 
                         <EditText
                             android:id="@+id/etJudet"
@@ -133,14 +122,14 @@
                             android:background="@drawable/bottom_border"
                             android:ems="10"
                             android:inputType="text"
-                            android:text="Timiș"
-                            android:textSize="24sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.246"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.464" />
+                            app:layout_constraintVertical_bias="0.464"
+                            android:textSize="24sp"
+                            android:text="@string/SETetJudet" />
 
                         <EditText
                             android:id="@+id/etTelefon"
@@ -150,14 +139,14 @@
                             android:background="@drawable/bottom_border"
                             android:ems="10"
                             android:inputType="text"
-                            android:text="+40 7134 400 555"
-                            android:textSize="24sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.246"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.315" />
+                            app:layout_constraintVertical_bias="0.315"
+                            android:textSize="24sp"
+                            android:text="@string/SETetTelefon"/>
 
                         <EditText
                             android:id="@+id/etPrenume"
@@ -167,14 +156,14 @@
                             android:background="@drawable/bottom_border"
                             android:ems="10"
                             android:inputType="text"
-                            android:text="Titusz"
-                            android:textSize="24sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.246"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.166" />
+                            app:layout_constraintVertical_bias="0.166"
+                            android:textSize="24sp"
+                            android:text="@string/SETetPrenume"/>
 
                         <EditText
                             android:id="@+id/etNume"
@@ -184,32 +173,33 @@
                             android:background="@drawable/bottom_border"
                             android:ems="10"
                             android:inputType="text"
-                            android:text="Boros"
-                            android:textSize="24sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.246"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.039" />
+                            app:layout_constraintVertical_bias="0.039"
+                            android:textSize="24sp"
+                            android:text="@string/SETetNume" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cv1b"
+                    android:id="@+id/tlUserInfoEditCardView"
                     android:layout_width="0dp"
                     android:layout_height="500dp"
                     android:layout_margin="4dp"
                     android:layout_weight="0.2"
-                    android:background="@drawable/white_subtle_border"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="40dp">
+                    app:cardElevation="40dp"
+                    android:background="@drawable/white_subtle_border" >
 
-                    <!-- Add your content here -->
 
                     <LinearLayout
+                        android:id="@+id/uiecvLinearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -219,62 +209,63 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="50dp"
-                            android:src="@drawable/edit_black" />
+                            android:src="@drawable/edit_black"
+                            android:contentDescription="@string/SETimageView_nume" />
 
                         <ImageView
                             android:id="@+id/imageView_prenume"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="30dp"
-                            android:src="@drawable/edit_black" />
+                            android:src="@drawable/edit_black"
+                            android:contentDescription="@string/SETimageView_prenume"/>
 
                         <ImageView
                             android:id="@+id/imageView_telefon"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="40dp"
-                            android:src="@drawable/edit_black" />
+                            android:src="@drawable/edit_black"
+                            android:contentDescription="@string/SETimageView_telefon" />
 
                         <ImageView
                             android:id="@+id/imageView_judet"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="40dp"
-                            android:src="@drawable/edit_black" />
+                            android:src="@drawable/edit_black"
+                            android:contentDescription="@string/SETimageView_judet" />
 
                         <ImageView
                             android:id="@+id/imageView_oras"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="40dp"
-                            android:src="@drawable/edit_black" />
+                            android:src="@drawable/edit_black"
+                            android:contentDescription="@string/SETimageView_oras" />
 
                         <ImageView
                             android:id="@+id/imageView_strada"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="40dp"
-                            android:src="@drawable/edit_black" />
-
-                        <ImageView
-                            android:id="@+id/imageView_nr"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="40dp"
-                            android:src="@drawable/edit_black" />
+                            android:src="@drawable/edit_black"
+                            android:contentDescription="@string/SETimageView_strada" />
 
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
             </TableRow>
 
             <TableRow
+                android:id="@+id/tlRow2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cv2a"
+                    android:id="@+id/trLangCardView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
@@ -283,28 +274,30 @@
                     app:cardBackgroundColor="@color/lightgreen"
                     app:cardCornerRadius="20dp">
 
-
                     <TableLayout
+                        android:id="@+id/lcvLanguageTableLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/white_subtle_border">
 
                         <TableRow
+                            android:id="@+id/itlRomanianRow"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/white_subtle_border"
                             android:gravity="center_vertical">
 
                             <ImageView
-                                android:id="@+id/textView_roman"
+                                android:id="@+id/rImageView"
                                 android:layout_width="0dp"
                                 android:layout_height="50dp"
                                 android:layout_weight="0.8"
+                                android:textColor="@android:color/black"
                                 android:src="@drawable/ro"
-                                android:textColor="@android:color/black" />
+                                android:contentDescription="@string/SETrImageView"/>
 
                             <CheckBox
-                                android:id="@+id/checkBox_roman"
+                                android:id="@+id/rCheckbox"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
@@ -317,21 +310,23 @@
 
 
                         <TableRow
+                            android:id="@+id/itlEnglishRow"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/white_subtle_border"
                             android:gravity="center_vertical">
 
                             <ImageView
-                                android:id="@+id/textView_brit"
+                                android:id="@+id/eImageView"
                                 android:layout_width="0dp"
                                 android:layout_height="50dp"
                                 android:layout_weight="0.8"
                                 android:src="@drawable/br"
-                                android:textColor="@android:color/black" />
+                                android:textColor="@android:color/black"
+                                android:contentDescription="@string/SETeImageView"/>
 
                             <CheckBox
-                                android:id="@+id/checkBox_brit"
+                                android:id="@+id/eCheckbox"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
@@ -343,6 +338,7 @@
                         </TableRow>
 
                         <TableRow
+                            android:id="@+id/hImageView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -355,10 +351,11 @@
                                 android:layout_height="50dp"
                                 android:layout_weight="0.8"
                                 android:src="@drawable/hu"
-                                android:textColor="@android:color/black" />
+                                android:textColor="@android:color/black"
+                                android:contentDescription="@string/SEThImageView"/>
 
                             <CheckBox
-                                android:id="@+id/checkBox_hun"
+                                android:id="@+id/hCheckbox"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
@@ -370,10 +367,11 @@
                         </TableRow>
 
                     </TableLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cv2b"
+                    android:id="@+id/trAlteCardView"
                     android:layout_width="0dp"
                     android:layout_height="230dp"
                     android:layout_margin="4dp"
@@ -383,49 +381,52 @@
                     app:cardCornerRadius="2dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/acvConstraintLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <Button
-                            android:id="@+id/button_resetpassword"
+                            android:id="@+id/SETresetpasswordButton"
                             android:layout_width="match_parent"
                             android:layout_height="115dp"
                             android:background="@drawable/bottom_border"
                             android:padding="2dp"
-                            android:text="Schimbare parolă"
-                            android:textSize="16sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.982" />
+                            app:layout_constraintVertical_bias="0.982"
+                            android:textSize="16sp"
+                            android:text="@string/SETresetpasswordButton"/>
 
                         <Button
-                            android:id="@+id/button_logout"
+                            android:id="@+id/SETlogoutButton"
                             android:layout_width="match_parent"
                             android:layout_height="115dp"
                             android:background="@drawable/green_subtle_border"
-                            android:text="Deconectare"
-                            android:textSize="16sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.0" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                            app:layout_constraintVertical_bias="0.0"
+                            android:textSize="16sp"
+                            android:text="@string/SETlogoutButton" />
 
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </TableRow>
 
             <TableRow
+                android:id="@+id/tlBottomRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_bottom_page"
+                    android:id="@+id/brBottomCardView"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_weight="1"
@@ -433,15 +434,16 @@
                     app:layout_constraintTop_toBottomOf="@+id/cv1">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/bcvConstraintLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </androidx.cardview.widget.CardView>
+
             </TableRow>
 
+    </TableLayout>
 
-        </TableLayout>
-    </ScrollView>
-</FrameLayout>
+</ScrollView>

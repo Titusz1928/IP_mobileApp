@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         //doctor info
-        val expandDoctorButton=view.findViewById<ImageView>(R.id.imageView_btExpand)
+        val expandDoctorButton=view.findViewById<ImageView>(R.id.HOMDoctorInfoButtonImage)
         val doctorInfoRow1a = view.findViewById<TableRow>(R.id.doctor_info_row1a)
         val doctorInfoRow1b = view.findViewById<TableRow>(R.id.doctor_info_row1b)
         val doctorInfoRow2a = view.findViewById<TableRow>(R.id.doctor_info_row2a)
@@ -59,11 +59,11 @@ class HomeFragment : Fragment() {
         val doctorInfoRow3b = view.findViewById<TableRow>(R.id.doctor_info_row3b)
 
         //recoms
-        val buttonRecom1 = view.findViewById<CardView>(R.id.cv_recom1)
+        val buttonRecom1 = view.findViewById<CardView>(R.id.llRecom1CardView)
 
         //card menus
-        val to_fisa_medicala = view.findViewById<CardView>(R.id.cardView_fisa_medicala)
-        val to_alarm = view.findViewById<CardView>(R.id.cardView_alarm)
+        val to_fisa_medicala = view.findViewById<CardView>(R.id.llFisaMedicalaCardView)
+        val to_alarm = view.findViewById<CardView>(R.id.llAlarmeCardView)
 
         expandDoctorButton.setOnClickListener {
             if (doctorInfoRow1a.visibility == View.GONE) {

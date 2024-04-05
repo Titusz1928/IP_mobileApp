@@ -21,8 +21,8 @@ class SettingsFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
-        val buttonLogout = view.findViewById<Button>(R.id.button_logout)
-        val buttonChangePassword = view.findViewById<Button>(R.id.button_resetpassword)
+        val buttonLogout = view.findViewById<Button>(R.id.SETlogoutButton)
+        val buttonChangePassword = view.findViewById<Button>(R.id.SETresetpasswordButton)
         val buttonChangeName=view.findViewById<ImageView>(R.id.imageView_nume)
 
         buttonChangeName.setOnClickListener{

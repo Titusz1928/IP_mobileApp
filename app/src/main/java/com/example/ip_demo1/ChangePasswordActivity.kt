@@ -10,8 +10,8 @@ class ChangePasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_change_password)
 
-        val buttonBack=findViewById<Button>(R.id.btBack)
-        val buttonConfirm=findViewById<Button>(R.id.btConfirm)
+        val buttonBack=findViewById<Button>(R.id.CPAifcvBackPassword)
+        val buttonConfirm=findViewById<Button>(R.id.CPAifcvConfirmPassword)
 
         buttonBack.setOnClickListener {
             val intent = Intent(this, Menu_Activity::class.java)
