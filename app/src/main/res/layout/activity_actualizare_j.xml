@@ -80,15 +80,15 @@
                         android:textSize="24sp"
                         android:text="@string/ACTtrTensiuneArterialaText" />
 
-                        <EditText
-                            android:id="@+id/trTensiuneArterialaEdit"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/white_black_border"
+                    <EditText
+                        android:id="@+id/trTensiuneArterialaEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/white_black_border"
 
-                            android:inputType="number"
-                            android:text="0" />
+                        android:inputType="number"
+                        android:text="0" />
 
                 </TableRow>
 
@@ -214,10 +214,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/dr5Card"
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/dr5Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp" />
                 </TableRow>
 
             </TableLayout>

@@ -13,49 +13,46 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".ResetPasswordActivity1J"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordActivity2J"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordActivity3J"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivityJ"
+            android:exported="false" />
+        <activity
+            android:name=".ChangeInformationJ"
+            android:exported="false" />
+        <activity
+            android:name=".RecommendationActivityJ"
+            android:exported="false" />
+        <activity
+            android:name=".FisaMedicalaWebActivityJ"
+            android:exported="false" />
+        <activity
+            android:name=".AlarmsActivityJ"
+            android:exported="false" />
+        <activity
+            android:name=".ActualizareActivityJ"
+            android:exported="false" />
+        <activity
+            android:name=".VizualizareActivityJ"
+            android:exported="false" />
+        <activity
+            android:name=".SelectedChatJ"
+            android:exported="false" />
+        <activity
             android:name=".ChangePasswordActivityJ"
-            android:exported="false" />
-        <activity
-            android:name=".FisaMedicalaWebActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ChangeInformation"
-            android:exported="false" />
-        <activity
-            android:name=".s_chat1Activity"
-            android:exported="false" />
-        <activity
-            android:name=".VisualActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ActualizareActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AlarmsActivity"
             android:exported="false" />
         <activity
             android:name=".FisaMedicalaActivity"
             android:exported="false" />
         <activity
-            android:name=".ChangePasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".recommendationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ResetPasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity_reset_password2"
-            android:exported="false" />
-        <activity
-            android:name=".Menu_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".activity_reset_password3"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".MainActivityJ"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

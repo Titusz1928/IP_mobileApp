@@ -17,18 +17,18 @@ public class ChangePasswordActivityJ extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_password);
+        setContentView(R.layout.activity_change_password_j);
 
         Button buttonBack = findViewById(R.id.CPAifcvBackPassword);
         Button buttonConfirm = findViewById(R.id.CPAifcvConfirmPassword);
 
         buttonBack.setOnClickListener(v -> {
-            Intent intent = new Intent(ChangePasswordActivityJ.this, Menu_Activity.class);
+            Intent intent = new Intent(ChangePasswordActivityJ.this, MenuActivityJ.class);
             startActivity(intent);
         });
 
         buttonConfirm.setOnClickListener(v -> {
-            Intent intent = new Intent(ChangePasswordActivityJ.this, Menu_Activity.class);
+            Intent intent = new Intent(ChangePasswordActivityJ.this, MenuActivityJ.class);
             startActivity(intent);
         });
     }

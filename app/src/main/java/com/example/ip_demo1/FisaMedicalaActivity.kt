@@ -19,12 +19,12 @@ class FisaMedicalaActivity : AppCompatActivity() {
 
 
         button.setOnClickListener {
-            val intent = Intent(this, Menu_Activity::class.java)
+            val intent = Intent(this, MenuActivityJ::class.java)
             startActivity(intent)
         }
 
         to_recomButton.setOnClickListener {
-            val intent = Intent(this, recommendationActivity::class.java)
+            val intent = Intent(this, RecommendationActivityJ::class.java)
             startActivity(intent)
         }
 
