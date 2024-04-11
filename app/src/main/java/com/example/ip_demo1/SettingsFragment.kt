@@ -39,7 +39,7 @@ class SettingsFragment : Fragment() {
 
         buttonChangePassword.setOnClickListener {
             // Navigate to MainActivity
-            val intent = Intent(requireContext(), ChangePasswordActivity::class.java)
+            val intent = Intent(requireContext(), ChangePasswordActivityJ::class.java)
             startActivity(intent)
         }
 

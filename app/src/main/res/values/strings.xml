@@ -41,7 +41,6 @@ un specialist pentru orice îngrijorare sau întrebare legată de sănătatea ta
     <string name="recom_title"> Gestionarea stresului </string>
 
 
-
     <!-- Main Layout (login) -->
     <string name="MAINllLogoImageView"> Logo Image </string>
     <string name="MAINllArrowImageView"> Arrow Image </string>
@@ -232,12 +231,6 @@ un specialist pentru orice îngrijorare sau întrebare legată de sănătatea ta
     <string name="SETlogoutButton">Deconectare</string>
 
 
-
-
-
-
-
-
     <!-- Change Information Layout -->
     <string name="CINtrTopText"> Actualizare date </string>
 
@@ -255,11 +248,6 @@ un specialist pentru orice îngrijorare sau întrebare legată de sănătatea ta
 
     <string name="CPAifcvConfirmButton"> Confirmare </string>
     <string name="CPAifcvBackButton"> Înapoi </string>
-
-
-
-
-
 
 
 </resources>
