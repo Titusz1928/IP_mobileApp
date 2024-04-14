@@ -17,12 +17,12 @@ public class ResetPasswordActivity3J extends AppCompatActivity {
         Button buttonConfirm = findViewById(R.id.RPA3ifcvConfirmButton);
 
         buttonBack.setOnClickListener(v -> {
-            Intent intent = new Intent(ResetPasswordActivity3J.this, MainActivityJ.class);
+            Intent intent = new Intent(ResetPasswordActivity3J.this,LoginActivity.class);
             startActivity(intent);
         });
 
         buttonConfirm.setOnClickListener(v -> {
-            Intent intent = new Intent(ResetPasswordActivity3J.this, MainActivityJ.class);
+            Intent intent = new Intent(ResetPasswordActivity3J.this, LoginActivity.class);
             startActivity(intent);
         });
     }

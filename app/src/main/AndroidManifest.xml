@@ -13,6 +13,12 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityJ"
+            android:exported="false" />
+        <activity
             android:name=".ResetPasswordActivity1J"
             android:exported="false" />
         <activity
@@ -52,7 +58,7 @@
             android:name=".FisaMedicalaActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivityJ"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

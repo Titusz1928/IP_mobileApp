@@ -34,7 +34,7 @@ public class SettingsFragmentJ extends Fragment {
             @Override
             public void onClick(View v) {
                 // Navigate to MainActivity
-                Intent intent = new Intent(requireContext(), MainActivityJ.class);
+                Intent intent = new Intent(requireContext(), LoginActivity.class);
                 startActivity(intent);
             }
         });

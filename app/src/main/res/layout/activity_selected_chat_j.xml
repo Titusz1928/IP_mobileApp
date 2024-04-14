@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".s_chat1Activity" >
+    tools:context=".SelectedChatJ" >
 
     <include
         android:id="@+id/include"

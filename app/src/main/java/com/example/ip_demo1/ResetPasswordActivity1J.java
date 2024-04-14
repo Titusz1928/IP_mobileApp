@@ -17,7 +17,7 @@ public class ResetPasswordActivity1J extends AppCompatActivity {
         Button buttonNext = findViewById(R.id.RPAifcvConfirmButton);
 
         buttonBack.setOnClickListener(v -> {
-            Intent intent = new Intent(ResetPasswordActivity1J.this, MainActivityJ.class);
+            Intent intent = new Intent(ResetPasswordActivity1J.this, LoginActivity.class);
             startActivity(intent);
         });
 
