@@ -11,7 +11,7 @@ public class RegistrationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_registration_no_passw);
 
         Button registrationButton = findViewById(R.id.REGifcvRegistrationButton);
         Button backButton = findViewById(R.id.REGifcvBackButton);
