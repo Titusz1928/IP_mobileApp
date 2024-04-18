@@ -382,7 +382,7 @@
                         android:paddingBottom="10dp">
 
                         <EditText
-                            android:id="@+id/tlSProfesieEditText"
+                            android:id="@+id/tlProfesieEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -400,14 +400,14 @@
                     </TableRow>
 
                     <TableRow
-                        android:id="@+id/tlPLocMunRow"
+                        android:id="@+id/tlLocMunRow"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp">
 
                         <EditText
-                            android:id="@+id/tlSLocMunEditText"
+                            android:id="@+id/tlLocMunEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
