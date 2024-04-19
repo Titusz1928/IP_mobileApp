@@ -60,6 +60,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         registrationButton.setOnClickListener(v -> {
             registrationButton.setEnabled(false);
+            registrationButton.setClickable(false);
 
             // Collect user input
             String email = emailEditText.getText().toString();
@@ -80,7 +81,6 @@ public class RegistrationActivity extends AppCompatActivity {
             JSONObject userData = new JSONObject();
             try {
                 userData.put("adresa_email",email);
-                userData.put("id",100);
                 userData.put("nume", nume);
                 userData.put("prenume", prenume);
                 userData.put("varsta",age);
@@ -99,7 +99,7 @@ public class RegistrationActivity extends AppCompatActivity {
             }
             Log.d(TAG, userData.toString());
 
-            url="http://192.168.1.247:4000/registration";
+            url=getString(R.string.URLregistration);
 
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, userData,
                     new Response.Listener<JSONObject>() {
@@ -110,8 +110,13 @@ public class RegistrationActivity extends AppCompatActivity {
 
                             String message = response.optString("message", "Unknown message");
 
+
                             // Display the message in a Toast
                             Toast.makeText(RegistrationActivity.this, message, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                            startActivity(intent);
+
+
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -123,11 +128,8 @@ public class RegistrationActivity extends AppCompatActivity {
             });
 
             Volley.newRequestQueue(this).add(request);
-
-
-            Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-            startActivity(intent);
-
+            registrationButton.setEnabled(true);
+            registrationButton.setClickable(true);
         });
 
         backButton.setOnClickListener(v -> {

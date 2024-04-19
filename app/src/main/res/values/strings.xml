@@ -276,5 +276,9 @@ un specialist pentru orice îngrijorare sau întrebare legată de sănătatea ta
     <string name="CPAifcvConfirmButton"> Confirmare </string>
     <string name="CPAifcvBackButton"> Înapoi </string>
 
+    <!-- URLs-->
+    <string name="URLregistration"> http://192.168.1.247:4000/registration</string>
+    <string name="URLlogin"> http://192.168.1.247:4000/login </string>
+
 
 </resources>
