@@ -109,7 +109,7 @@ un specialist pentru orice îngrijorare sau întrebare legată de sănătatea ta
 
     <string name="HOMtcvLogoImageView">Logo Image</string>
     <string name="HOMtcvInformationTextView">Informație adițională</string>
-    <string name="HOMtcvGreeetingTextView">Bun venit, utilizator!</string>
+    <string name="HOMtcvGreeetingTextView">Bun venit, %s!</string>
 
     <string name="HOMttrTitleTextView">Doctorul meu</string>
 

@@ -66,6 +66,24 @@ public class LoginActivity extends AppCompatActivity {
                             // Display the message in a Toast
                             Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
                             if(message.equals("Welcome!")) {
+
+                                UserDataManager userDataManager = UserDataManager.getInstance();
+
+                                userDataManager.setNume(response.optString("nume", "Unknown"));
+                                userDataManager.setPrenume(response.optString("prenume", "Unknown"));
+                                userDataManager.setVarsta(response.optString("varsta", "Unknown"));
+                                userDataManager.setCnp(response.optString("cnp", "Unknown"));
+                                userDataManager.setStrada(response.optString("strada", "Unknown"));
+                                userDataManager.setOras(response.optString("oras", "Unknown"));
+                                userDataManager.setJudet(response.optString("judet", "Unknown"));
+                                userDataManager.setTara(response.optString("tara", "Unknown"));
+                                userDataManager.setNumar_telefon(response.optString("numar_tel", "Unknown"));
+                                userDataManager.setProfesie(response.optString("profes", "Unknown"));
+                                userDataManager.setLoc_munca(response.optString("loc_mun", "Unknown"));
+                                userDataManager.setAdresa_email(response.optString("adresa_email", "Unknown"));
+                                userDataManager.setParola(response.optString("parola", "Unknown"));
+
+
                                 Intent intent = new Intent(LoginActivity.this, MenuActivityJ.class);
                                 startActivity(intent);
                             }

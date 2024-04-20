@@ -88,7 +88,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 userData.put("numar_telefon", phone);
                 userData.put("tara",country);
                 userData.put("judet", judet);
-                userData.put("city", city);
+                userData.put("oras", city);
                 userData.put("strada",street);
                 userData.put("profesie", prof);
                 userData.put("loc_munca", locmun);

@@ -7,10 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 
@@ -25,6 +28,22 @@ public class HomeFragmentJ extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+        TextView tcvGreetingTextView = view.findViewById(R.id.tcvGreetingTextView);
+
+        // Get the instance of UserDataManager
+        UserDataManager userDataManager = UserDataManager.getInstance();
+
+        // Get the name of the user
+        String userName = userDataManager.getPrenume();
+
+        // Generate the welcome message based on the user's name
+        String welcomeMessage = getString(R.string.HOMtcvGreeetingTextView, userName);
+
+        // Set the welcome message to the TextView
+        tcvGreetingTextView.setText(welcomeMessage);
+
 
         //doctor info
         ImageView expandDoctorButton = view.findViewById(R.id.HOMDoctorInfoButtonImage);
