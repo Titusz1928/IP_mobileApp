@@ -2,8 +2,10 @@ package com.example.ip_demo1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -41,21 +43,30 @@ public class SelectedChatJ extends AppCompatActivity {
     String url;
     private static final String TAG = "MyTag";
 
+    private static final long DELAY_MS = 10000;
+
+    private Handler handler = new Handler();
+
+    private NestedScrollView nestedScrollView;
+    private LinearLayout parentLayout;
+    private String idConv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selected_chat2);
 
         FloatingActionButton back = findViewById(R.id.SCHbcvBackButton);
-        NestedScrollView nestedScrollView = findViewById(R.id.clNestedScrollView);
-        LinearLayout parentLayout = findViewById(R.id.nsvLinearLayout);
+        nestedScrollView = findViewById(R.id.clNestedScrollView);
+
+        parentLayout = findViewById(R.id.nsvLinearLayout);
 
 
         TextView nameText = findViewById(R.id.tcvNameText);
         //nameText.setText(getIntent().getStringExtra("prenume")+getIntent().getStringExtra("id_conv"));
 
         String prenume = getIntent().getStringExtra("prenume");
-        String idConv = getIntent().getStringExtra("id_conv");
+        idConv = getIntent().getStringExtra("id_conv");
 
         if (prenume != null) {
             nameText.setText(prenume);
@@ -69,13 +80,95 @@ public class SelectedChatJ extends AppCompatActivity {
         EditText messageInputField = findViewById(R.id.mscvMessageEditText);
 
 
+        loadMessages(nestedScrollView, parentLayout, idConv);
+        handler.postDelayed(loadMessagesTask, DELAY_MS);
+
+
+
+
+
+
+        sendButton.setOnClickListener(v -> {
+
+            url=getString(R.string.URLsend);
+
+            JSONObject messageData = new JSONObject();
+            try {
+                UserDataManager userDataManager = UserDataManager.getInstance();
+
+                String senderEmail = userDataManager.getAdresa_email();
+                String receiverEmail = getIntent().getStringExtra("email");
+
+                messageData.put("message",messageInputField.getText().toString());
+                messageData.put("semail",senderEmail);
+                messageData.put("remail",receiverEmail);
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            Log.d(TAG, messageData.toString());
+
+
+
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, messageData,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // Handle successful response
+                            Log.d(TAG, "Response: " + response.toString());
+
+                            String message = response.optString("message", "Unknown message");
+
+                            // Display the message in a Toast
+                            Toast.makeText(SelectedChatJ.this, message, Toast.LENGTH_SHORT).show();
+
+                            loadMessages(nestedScrollView, parentLayout, idConv);
+
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    // Handle error response
+                    Log.e(TAG, "Volley error: " + error.getMessage());
+                    Toast.makeText(SelectedChatJ.this, "Error occurred!", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            Volley.newRequestQueue(SelectedChatJ.this).add(request);
+            messageInputField.setText("");
+
+        });
+
+
+        //go back to chat list
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SelectedChatJ.this, MenuActivityJ.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    Runnable loadMessagesTask = new Runnable() {
+        @Override
+        public void run() {
+            loadMessages(nestedScrollView, parentLayout, idConv); // Call the function to load messages
+            handler.postDelayed(this, DELAY_MS); // Schedule the task to run again after the delay
+        }
+    };
+
+
+    private void loadMessages(NestedScrollView nestedScrollView, LinearLayout parentLayout, String idConv) {
         //loading previous messages
         url=getString(R.string.URLmessages);
 
         JSONObject conversationData = new JSONObject();
         try {
             UserDataManager userDataManager = UserDataManager.getInstance();
-            conversationData.put("id_conv",idConv);
+            conversationData.put("id_conv", idConv);
             //to get database id
             conversationData.put("user_email",userDataManager.getAdresa_email());
 
@@ -122,6 +215,13 @@ public class SelectedChatJ extends AppCompatActivity {
                                     cardView = createCardViewLeft(messagebox.getContinut(), messagebox.getData());
                                 }
 
+                                nestedScrollView.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        nestedScrollView.fullScroll(View.FOCUS_DOWN);
+                                    }
+                                });
+
                                 parentLayout.addView(cardView);
                                 Log.d(TAG, "Object created: " + messagebox.toString());
                             }
@@ -136,7 +236,7 @@ public class SelectedChatJ extends AppCompatActivity {
 
 
                         // Display the message in a Toast
-                        Toast.makeText(SelectedChatJ.this, message, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(SelectedChatJ.this, message, Toast.LENGTH_SHORT).show();
 
                     }
                 }, new Response.ErrorListener() {
@@ -149,102 +249,18 @@ public class SelectedChatJ extends AppCompatActivity {
         });
 
         Volley.newRequestQueue(SelectedChatJ.this).add(chatRequest);
-
-        nestedScrollView.post(new Runnable() {
-            @Override
-            public void run() {
-                nestedScrollView.fullScroll(View.FOCUS_DOWN);
-            }
-        });
-
-
-
-
-
-
-
-        url=getString(R.string.URLsend);
-
-        sendButton.setOnClickListener(v -> {
-
-            url=getString(R.string.URLsend);
-
-            JSONObject messageData = new JSONObject();
-            try {
-                UserDataManager userDataManager = UserDataManager.getInstance();
-
-                String senderEmail = userDataManager.getAdresa_email();
-                String receiverEmail = getIntent().getStringExtra("email");
-
-                messageData.put("message",messageInputField.getText().toString());
-                messageData.put("semail",senderEmail);
-                messageData.put("remail",receiverEmail);
-
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            Log.d(TAG, messageData.toString());
-
-
-
-            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, messageData,
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            // Handle successful response
-                            Log.d(TAG, "Response: " + response.toString());
-
-                            String message = response.optString("message", "Unknown message");
-
-                            // Display the message in a Toast
-                            Toast.makeText(SelectedChatJ.this, message, Toast.LENGTH_SHORT).show();
-
-
-
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    // Handle error response
-                    Log.e(TAG, "Volley error: " + error.getMessage());
-                    Toast.makeText(SelectedChatJ.this, "Error occurred!", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-            Volley.newRequestQueue(SelectedChatJ.this).add(request);
-            messageInputField.setText("");
-
-        });
-
-        //put nested scroll view fully down
-        nestedScrollView.post(new Runnable() {
-            @Override
-            public void run() {
-                nestedScrollView.fullScroll(View.FOCUS_DOWN);
-            }
-        });
-
-        //go back to chat list
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SelectedChatJ.this, MenuActivityJ.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private CardView createCardViewLeft(String continut, String data) {
         // Create a new CardView
-        CardView cardView = new CardView(SelectedChatJ.this);
+        MessageCardView cardView = new MessageCardView(SelectedChatJ.this);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, // Width
                 ViewGroup.LayoutParams.WRAP_CONTENT  // Height
         );
         layoutParams.setMargins(16, 16, 16, 16);
         cardView.setLayoutParams(layoutParams);
-
+        cardView.setRadius(40);
         cardView.setCardBackgroundColor(ContextCompat.getColor(SelectedChatJ.this, R.color.lightgray));
         cardView.setContentPadding(10, 10, 10, 10);
 
@@ -289,16 +305,18 @@ public class SelectedChatJ extends AppCompatActivity {
 
     private CardView createCardViewRight(String continut, String data) {
         // Create a new CardView
-        CardView cardView = new CardView(SelectedChatJ.this);
+        MessageCardView cardView = new MessageCardView(SelectedChatJ.this);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, // Width
                     ViewGroup.LayoutParams.WRAP_CONTENT  // Height
         );
         layoutParams.setMargins(16, 16, 16, 16);
+        layoutParams.gravity = Gravity.END;
         cardView.setLayoutParams(layoutParams);
-
+        cardView.setRadius(40);
         cardView.setCardBackgroundColor(ContextCompat.getColor(SelectedChatJ.this, R.color.background));
         cardView.setContentPadding(10, 10, 10, 10);
+
 
         // Create a LinearLayout for the card view contents
         LinearLayout linearLayout = new LinearLayout(SelectedChatJ.this);
@@ -320,7 +338,7 @@ public class SelectedChatJ extends AppCompatActivity {
         // Create the TextView for 'data'
         TextView textViewData = new TextView(SelectedChatJ.this);
         textViewData.setText(data);
-        textViewData.setTextSize(TypedValue.COMPLEX_UNIT_SP, 8);
+        textViewData.setTextSize(TypedValue.COMPLEX_UNIT_SP, 10);
         textViewData.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
