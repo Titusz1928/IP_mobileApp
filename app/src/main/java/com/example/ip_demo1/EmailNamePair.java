@@ -14,7 +14,7 @@ public class EmailNamePair {
     public EmailNamePair() {
     }
 
-    public EmailNamePair(String email, String prenume) {
+    public EmailNamePair(String email, String prenume, String id_conv) {
         this.email = email;
         this.prenume = prenume;
         this.id_conv=id_conv;

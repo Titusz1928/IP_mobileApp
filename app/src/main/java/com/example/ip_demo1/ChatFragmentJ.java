@@ -92,7 +92,7 @@ public class ChatFragmentJ extends Fragment {
                             Log.d(TAG,lastMsgArray.toString());
                             JSONArray id_convArray = response.getJSONArray("id_conv_values");
                             Log.d(TAG,id_convArray.toString());
-                            List<EmailNamePair> emailNamePairsExisting = parseJsonArraysExisting(emailArray, prenumeArray,dateArray,lastMsgArray, id_convArray);
+                            List<EmailNamePair> emailNamePairsExisting = parseJsonArrays(emailArray, prenumeArray,dateArray,lastMsgArray, id_convArray);
 
                             parentLayout.removeAllViews();
 
@@ -144,7 +144,9 @@ public class ChatFragmentJ extends Fragment {
 
             JSONObject searchData = new JSONObject();
             try {
+                UserDataManager userDataManager = UserDataManager.getInstance();
                 searchData.put("searched_email",searchInputField.getText().toString());
+                searchData.put("email_logged_user",userDataManager.getAdresa_email());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -169,14 +171,25 @@ public class ChatFragmentJ extends Fragment {
                                 Log.d(TAG,emailArray.toString());
                                 JSONArray prenumeArray = response.getJSONArray("prenume_values");
                                 Log.d(TAG,prenumeArray.toString());
-                                List<EmailNamePair> emailNamePairs = parseJsonArrays(emailArray, prenumeArray);
+                                JSONArray dateArray = response.getJSONArray("data_values");
+                                Log.d(TAG,dateArray.toString());
+                                JSONArray lastMsgArray = response.getJSONArray("last_msg_values");
+                                Log.d(TAG,lastMsgArray.toString());
+                                JSONArray id_convArray = response.getJSONArray("id_conv_values");
+                                Log.d(TAG,id_convArray.toString());
+                                List<EmailNamePair> emailNamePairs = parseJsonArrays(emailArray, prenumeArray,dateArray,lastMsgArray, id_convArray);
 
                                 parentLayout.removeAllViews();
 
                                 // Now you have a list of EmailNamePair objects, you can use it as needed
                                 for (EmailNamePair pair : emailNamePairs) {
+                                    CardView cardView;
                                     // Create a CardView for each pair and add it to the parent LinearLayout
-                                    CardView cardView = createCardView(pair.getEmail(), pair.getPrenume());
+                                    if (pair.getId_conv().equals("-1")) {
+                                        cardView = createCardView(pair.getEmail(), pair.getPrenume(),pair.getId_conv());
+                                    }else{
+                                        cardView = createCardViewExisting(pair.getEmail(), pair.getPrenume(),pair.getDate(),pair.getLast_msg(),pair.getId_conv());
+                                    }
                                     parentLayout.addView(cardView);
                                     Log.d(TAG,"obiect created: "+ pair.toString());
 
@@ -206,24 +219,7 @@ public class ChatFragmentJ extends Fragment {
 
     //FUNCTIONS
 
-    // Method to parse JSON arrays and create EmailNamePair objects
-    private List<EmailNamePair> parseJsonArrays(JSONArray emailArray, JSONArray prenumeArray) throws JSONException {
-        List<EmailNamePair> emailNamePairs = new ArrayList<>();
-
-        int length = Math.min(emailArray.length(), prenumeArray.length());
-
-        for (int i = 0; i < length; i++) {
-            String email = emailArray.getString(i);
-            String prenume = prenumeArray.getString(i);
-
-            EmailNamePair emailNamePair = new EmailNamePair(email, prenume);
-            emailNamePairs.add(emailNamePair);
-        }
-
-        return emailNamePairs;
-    }
-
-    private List<EmailNamePair> parseJsonArraysExisting(JSONArray emailArray, JSONArray prenumeArray,JSONArray dateArray, JSONArray lastMsgArray, JSONArray id_convArray) throws JSONException {
+    private List<EmailNamePair> parseJsonArrays(JSONArray emailArray, JSONArray prenumeArray,JSONArray dateArray, JSONArray lastMsgArray, JSONArray id_convArray) throws JSONException {
         List<EmailNamePair> emailNamePairs = new ArrayList<>();
 
         int length = Math.min(emailArray.length(), prenumeArray.length());
@@ -248,7 +244,7 @@ public class ChatFragmentJ extends Fragment {
     }
 
     //Card view creating
-    private CardView createCardView(String email, String prenume) {
+    private CardView createCardView(String email, String prenume, String idConv) {
         CardView cardView = new CardView(requireContext());
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
@@ -269,7 +265,7 @@ public class ChatFragmentJ extends Fragment {
                 Intent intent = new Intent(requireContext(),SelectedChatJ.class);
                 intent.putExtra("email", email);
                 intent.putExtra("prenume", prenume);
-                intent.putExtra("id_conv","-1");
+                intent.putExtra("id_conv",idConv);
                 startActivity(intent);
             }
         });

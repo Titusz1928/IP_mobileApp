@@ -79,9 +79,10 @@ public class SelectedChatJ extends AppCompatActivity {
         ImageView sendButton = findViewById(R.id.mscvImageView);
         EditText messageInputField = findViewById(R.id.mscvMessageEditText);
 
-
-        loadMessages(nestedScrollView, parentLayout, idConv);
-        handler.postDelayed(loadMessagesTask, DELAY_MS);
+        if (!idConv.equals("-1")) {
+            loadMessages(nestedScrollView, parentLayout, idConv);
+            handler.postDelayed(loadMessagesTask, DELAY_MS);
+        }
 
 
 
@@ -120,10 +121,15 @@ public class SelectedChatJ extends AppCompatActivity {
 
                             String message = response.optString("message", "Unknown message");
 
-                            // Display the message in a Toast
-                            Toast.makeText(SelectedChatJ.this, message, Toast.LENGTH_SHORT).show();
+                            //convert non existing conversation to existing so that it can load the messages
+                            if (idConv.equals("-1")) {
+                                String idConvNew = response.optString("id_conv");
+                                Toast.makeText(SelectedChatJ.this, "New Conversation started!", Toast.LENGTH_SHORT).show();
+                                idConv=idConvNew;
+                                loadMessages(nestedScrollView, parentLayout, idConv);
+                                handler.postDelayed(loadMessagesTask, DELAY_MS);
+                            }
 
-                            loadMessages(nestedScrollView, parentLayout, idConv);
 
                         }
                     }, new Response.ErrorListener() {
@@ -145,6 +151,7 @@ public class SelectedChatJ extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                handler.removeCallbacks(loadMessagesTask);
                 Intent intent = new Intent(SelectedChatJ.this, MenuActivityJ.class);
                 startActivity(intent);
             }
