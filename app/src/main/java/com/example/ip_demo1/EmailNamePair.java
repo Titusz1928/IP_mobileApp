@@ -9,19 +9,23 @@ public class EmailNamePair {
 
     private String last_msg;
 
+    private String id_conv;
+
     public EmailNamePair() {
     }
 
     public EmailNamePair(String email, String prenume) {
         this.email = email;
         this.prenume = prenume;
+        this.id_conv=id_conv;
     }
 
-    public EmailNamePair(String email, String prenume, String date, String last_msg) {
+    public EmailNamePair(String email, String prenume, String date, String last_msg, String id_conv) {
         this.email = email;
         this.prenume = prenume;
         this.date = date;
         this.last_msg = last_msg;
+        this.id_conv=id_conv;
     }
 
     public String getEmail() {
@@ -56,11 +60,22 @@ public class EmailNamePair {
         this.last_msg = last_msg;
     }
 
+    public String getId_conv() {
+        return id_conv;
+    }
+
+    public void setId_conv(String id_conv) {
+        this.id_conv = id_conv;
+    }
+
     @Override
     public String toString() {
         return "EmailNamePair{" +
                 "email='" + email + '\'' +
                 ", prenume='" + prenume + '\'' +
+                ", date='" + date + '\'' +
+                ", last_msg='" + last_msg + '\'' +
+                ", id_conv=" + id_conv +
                 '}';
     }
 }

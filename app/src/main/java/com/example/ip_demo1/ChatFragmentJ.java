@@ -31,6 +31,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ChatFragmentJ extends Fragment {
@@ -88,14 +90,26 @@ public class ChatFragmentJ extends Fragment {
                             Log.d(TAG,dateArray.toString());
                             JSONArray lastMsgArray = response.getJSONArray("last_msg_values");
                             Log.d(TAG,lastMsgArray.toString());
-                            List<EmailNamePair> emailNamePairsExisting = parseJsonArraysExisting(emailArray, prenumeArray,dateArray,lastMsgArray);
+                            JSONArray id_convArray = response.getJSONArray("id_conv_values");
+                            Log.d(TAG,id_convArray.toString());
+                            List<EmailNamePair> emailNamePairsExisting = parseJsonArraysExisting(emailArray, prenumeArray,dateArray,lastMsgArray, id_convArray);
 
                             parentLayout.removeAllViews();
+
+                            // Sort emailNamePairsExisting list by date
+                            Collections.sort(emailNamePairsExisting, new Comparator<EmailNamePair>() {
+                                @Override
+                                public int compare(EmailNamePair pair1, EmailNamePair pair2) {
+                                    // Compare the dates of the pairs
+                                    // Assuming the date format is "yyyy-MM-dd", you can use String.compareTo()
+                                    return pair2.getDate().compareTo(pair1.getDate());
+                                }
+                            });
 
                             // Now you have a list of EmailNamePair objects, you can use it as needed
                             for (EmailNamePair pair : emailNamePairsExisting) {
                                 // Create a CardView for each pair and add it to the parent LinearLayout
-                                CardView cardView = createCardViewExisting(pair.getEmail(), pair.getPrenume(),pair.getDate(),pair.getLast_msg());
+                                CardView cardView = createCardViewExisting(pair.getEmail(), pair.getPrenume(),pair.getDate(),pair.getLast_msg(),pair.getId_conv());
                                 parentLayout.addView(cardView);
                                 Log.d(TAG,"obiect created: "+ pair.toString());
 
@@ -190,6 +204,8 @@ public class ChatFragmentJ extends Fragment {
         return view;
     }
 
+    //FUNCTIONS
+
     // Method to parse JSON arrays and create EmailNamePair objects
     private List<EmailNamePair> parseJsonArrays(JSONArray emailArray, JSONArray prenumeArray) throws JSONException {
         List<EmailNamePair> emailNamePairs = new ArrayList<>();
@@ -207,7 +223,7 @@ public class ChatFragmentJ extends Fragment {
         return emailNamePairs;
     }
 
-    private List<EmailNamePair> parseJsonArraysExisting(JSONArray emailArray, JSONArray prenumeArray,JSONArray dateArray, JSONArray lastMsgArray) throws JSONException {
+    private List<EmailNamePair> parseJsonArraysExisting(JSONArray emailArray, JSONArray prenumeArray,JSONArray dateArray, JSONArray lastMsgArray, JSONArray id_convArray) throws JSONException {
         List<EmailNamePair> emailNamePairs = new ArrayList<>();
 
         int length = Math.min(emailArray.length(), prenumeArray.length());
@@ -217,13 +233,14 @@ public class ChatFragmentJ extends Fragment {
             String prenume = prenumeArray.getString(i);
             String date = dateArray.getString(i);
             String lastMsg = lastMsgArray.getString(i);
+            String id_conv = id_convArray.getString(i);
 
             // Truncate lastMsg to 10 characters and add ellipsis if there was truncation
             if (lastMsg.length() > 10) {
                 lastMsg = lastMsg.substring(0, 10) + "...";
             }
 
-            EmailNamePair emailNamePair = new EmailNamePair(email, prenume,date,lastMsg);
+            EmailNamePair emailNamePair = new EmailNamePair(email, prenume,date,lastMsg,id_conv);
             emailNamePairs.add(emailNamePair);
         }
 
@@ -252,6 +269,7 @@ public class ChatFragmentJ extends Fragment {
                 Intent intent = new Intent(requireContext(),SelectedChatJ.class);
                 intent.putExtra("email", email);
                 intent.putExtra("prenume", prenume);
+                intent.putExtra("id_conv","-1");
                 startActivity(intent);
             }
         });
@@ -312,7 +330,7 @@ public class ChatFragmentJ extends Fragment {
         return cardView;
     }
 
-    private CardView createCardViewExisting(String email, String prenume, String date, String lastMsg) {
+    private CardView createCardViewExisting(String email, String prenume, String date, String lastMsg, String id_conv) {
         CardView cardView = new CardView(requireContext());
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
@@ -333,6 +351,7 @@ public class ChatFragmentJ extends Fragment {
                 Intent intent = new Intent(requireContext(),SelectedChatJ.class);
                 intent.putExtra("email", email);
                 intent.putExtra("prenume", prenume);
+                intent.putExtra("id_conv",id_conv);
                 startActivity(intent);
             }
         });

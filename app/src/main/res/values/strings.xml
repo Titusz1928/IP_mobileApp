@@ -281,6 +281,7 @@ un specialist pentru orice îngrijorare sau întrebare legată de sănătatea ta
     <string name="URLlogin"> http://192.168.1.247:4000/login </string>
     <string name="URLchats"> http://192.168.1.247:4000/chats </string>
     <string name="URLsearch"> http://192.168.1.247:4000/search </string>
+    <string name="URLmessages"> http://192.168.1.247:4000/mesaje </string>
     <string name="URLsend"> http://192.168.1.247:4000/send </string>
 
 
