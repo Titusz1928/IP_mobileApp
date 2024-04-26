@@ -8,8 +8,8 @@ import androidx.cardview.widget.CardView;
 
 public class MessageCardView extends CardView {
 
-    private static final int MAX_WIDTH_DP = 700;
-    private int maxWidthPx;
+    private static final int MAX_WIDTH_DP = 500; // Maximum width in dp
+    private int maxWidthPx; // Maximum width in pixels
 
     public MessageCardView(Context context) {
         super(context);
@@ -27,7 +27,7 @@ public class MessageCardView extends CardView {
     }
 
     private void init() {
-        // Set maximum width programmatically
+        // Calculate maximum width in pixels
         maxWidthPx = (int) TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_DIP, MAX_WIDTH_DP,
                 getResources().getDisplayMetrics());
@@ -35,15 +35,16 @@ public class MessageCardView extends CardView {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        // Measure the width with the provided measure spec
-        int measuredWidth = MeasureSpec.getSize(widthMeasureSpec);
+        // Get the width mode and size from the measure spec
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
 
-        // Ensure the measured width does not exceed the maximum width
-        if (measuredWidth > MAX_WIDTH_DP) {
-            int widthMeasureSpecFixed = MeasureSpec.makeMeasureSpec(MAX_WIDTH_DP, MeasureSpec.EXACTLY);
-            super.onMeasure(widthMeasureSpecFixed, heightMeasureSpec);
-        } else {
-            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        // Ensure the width does not exceed the maximum width
+        int newWidthMeasureSpec = widthMeasureSpec;
+        if (widthMode != MeasureSpec.UNSPECIFIED && widthSize > maxWidthPx) {
+            newWidthMeasureSpec = MeasureSpec.makeMeasureSpec(maxWidthPx, MeasureSpec.AT_MOST);
         }
+
+        super.onMeasure(newWidthMeasureSpec, heightMeasureSpec);
     }
 }

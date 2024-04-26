@@ -128,6 +128,8 @@ public class SelectedChatJ extends AppCompatActivity {
                                 idConv=idConvNew;
                                 loadMessages(nestedScrollView, parentLayout, idConv);
                                 handler.postDelayed(loadMessagesTask, DELAY_MS);
+                            }else{
+                                loadMessages(nestedScrollView, parentLayout, idConv);
                             }
 
 
