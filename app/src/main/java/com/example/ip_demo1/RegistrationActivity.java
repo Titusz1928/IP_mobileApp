@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +33,7 @@ import java.net.URL;
 public class RegistrationActivity extends AppCompatActivity {
     private static final String TAG = "MyTag";
 
+    private long mLastClickTime = 0;
     String url;
 
     @Override
@@ -59,6 +61,13 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
         registrationButton.setOnClickListener(v -> {
+            if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                return;
+            }
+            mLastClickTime = SystemClock.elapsedRealtime();
+
+            Toast.makeText(RegistrationActivity.this, "Loading", Toast.LENGTH_LONG).show();
+
             registrationButton.setEnabled(false);
             registrationButton.setClickable(false);
 

@@ -3,6 +3,7 @@ package com.example.ip_demo1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -44,6 +45,8 @@ public class SelectedChatJ extends AppCompatActivity {
     private static final String TAG = "MyTag";
 
     private static final long DELAY_MS = 10000;
+
+    private long mLastClickTime = 0;
 
     private Handler handler = new Handler();
 
@@ -90,6 +93,11 @@ public class SelectedChatJ extends AppCompatActivity {
 
 
         sendButton.setOnClickListener(v -> {
+
+            if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                return;
+            }
+            mLastClickTime = SystemClock.elapsedRealtime();
 
             url=getString(R.string.URLsend);
 
