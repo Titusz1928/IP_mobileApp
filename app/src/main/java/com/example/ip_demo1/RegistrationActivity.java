@@ -41,11 +41,12 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_no_passw);
 
-        Log.d(TAG, "registration activity enteredss");
+        Log.d(TAG, "registration activity entered");
 
+        //declaring buttons
         Button registrationButton = findViewById(R.id.REGifcvRegistrationButton);
         Button backButton = findViewById(R.id.REGifcvBackButton);
-
+        //declaring inputs
         TextInputEditText emailEditText = findViewById(R.id.tilEmail);
         EditText numeEditText = findViewById(R.id.tlNumeEditText);
         EditText prenumeEditText = findViewById(R.id.tlPrenumeEditText);
@@ -59,8 +60,9 @@ public class RegistrationActivity extends AppCompatActivity {
         EditText profEditText = findViewById(R.id.tlProfesieEditText);
         EditText locmunEditText = findViewById(R.id.tlLocMunEditText);
 
-
+        //executed when pressing the registration button
         registrationButton.setOnClickListener(v -> {
+            //if not enough time passed we stop, its to prevent double clicks
             if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                 return;
             }
@@ -110,6 +112,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
             url=getString(R.string.URLregistration);
 
+            //sending the request
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, userData,
                     new Response.Listener<JSONObject>() {
                         @Override
@@ -141,6 +144,7 @@ public class RegistrationActivity extends AppCompatActivity {
             registrationButton.setClickable(true);
         });
 
+        //back to login screen
         backButton.setOnClickListener(v -> {
             Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
             startActivity(intent);

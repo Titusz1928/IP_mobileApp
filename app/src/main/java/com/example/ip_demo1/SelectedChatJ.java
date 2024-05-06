@@ -1,6 +1,7 @@
 package com.example.ip_demo1;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -68,17 +69,18 @@ public class SelectedChatJ extends AppCompatActivity {
         TextView nameText = findViewById(R.id.tcvNameText);
         //nameText.setText(getIntent().getStringExtra("prenume")+getIntent().getStringExtra("id_conv"));
 
+        //we retrieve the prenume and id_conv from the ChatFragment Activity
         String prenume = getIntent().getStringExtra("prenume");
         idConv = getIntent().getStringExtra("id_conv");
 
         if (prenume != null) {
             nameText.setText(prenume);
         } else {
-            // Handle case where one or both extras are null
-            // For example, display a default message or handle the null values appropriately
+            //displaying default name
             nameText.setText("Error loading name");
         }
 
+        //declaring buttons and inputs
         ImageView sendButton = findViewById(R.id.mscvImageView);
         EditText messageInputField = findViewById(R.id.mscvMessageEditText);
 
@@ -91,9 +93,9 @@ public class SelectedChatJ extends AppCompatActivity {
 
 
 
-
+        //executed after pressing send button
         sendButton.setOnClickListener(v -> {
-
+            //used for preventing double clicks
             if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                 return;
             }
@@ -101,15 +103,15 @@ public class SelectedChatJ extends AppCompatActivity {
 
             url=getString(R.string.URLsend);
 
+            //creating json object
             JSONObject messageData = new JSONObject();
             try {
                 UserDataManager userDataManager = UserDataManager.getInstance();
 
-                String senderEmail = userDataManager.getAdresa_email();
                 String receiverEmail = getIntent().getStringExtra("email");
 
                 messageData.put("message",messageInputField.getText().toString());
-                messageData.put("semail",senderEmail);
+                messageData.put("user_id",userDataManager.getId());
                 messageData.put("remail",receiverEmail);
 
 
@@ -119,7 +121,7 @@ public class SelectedChatJ extends AppCompatActivity {
             Log.d(TAG, messageData.toString());
 
 
-
+            //creating request
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, messageData,
                     new Response.Listener<JSONObject>() {
                         @Override
@@ -168,7 +170,7 @@ public class SelectedChatJ extends AppCompatActivity {
         });
     }
 
-
+    //used for loading in messages
     Runnable loadMessagesTask = new Runnable() {
         @Override
         public void run() {
@@ -182,18 +184,20 @@ public class SelectedChatJ extends AppCompatActivity {
         //loading previous messages
         url=getString(R.string.URLmessages);
 
+        //creating json objec
         JSONObject conversationData = new JSONObject();
         try {
             UserDataManager userDataManager = UserDataManager.getInstance();
             conversationData.put("id_conv", idConv);
             //to get database id
-            conversationData.put("user_email",userDataManager.getAdresa_email());
+            conversationData.put("user_id",userDataManager.getId());
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
         Log.d(TAG, conversationData.toString());
 
+        //creating request
         JsonObjectRequest chatRequest = new JsonObjectRequest(Request.Method.POST, url, conversationData,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -204,16 +208,17 @@ public class SelectedChatJ extends AppCompatActivity {
                         String message = response.optString("message", "Unknown message");
 
                         try {
-                            String user_id=response.optString("user_id");
+                            UserDataManager userDataManager = UserDataManager.getInstance();
+                            String user_id=String.valueOf(userDataManager.getId());
                             //System.out.println(user_id);
-
+                            //creating array from the json arrays
                             JSONArray continutArray = response.getJSONArray("continut_values");
                             Log.d(TAG,continutArray.toString());
                             JSONArray dataArray = response.getJSONArray("data_values");
                             Log.d(TAG,dataArray.toString());
                             JSONArray idSenderArray = response.getJSONArray("id_sender_values");
                             Log.d(TAG,idSenderArray.toString());
-
+                            //uniting arrays into a list
                             List<MessageBox> messageBoxList = parseJsonArrays(continutArray, dataArray,idSenderArray);
 
                             parentLayout.removeAllViews();
@@ -226,12 +231,16 @@ public class SelectedChatJ extends AppCompatActivity {
                                 CardView cardView;
 
                                 // Create a CardView for each pair and add it to the parent LinearLayout
+                                //Log.d(TAG,"[i] Comparing:"+messagebox.getSender_id()+user_id);
                                 if (messagebox.getSender_id() == user_id) {
+                                    //currenlty logged in user message
                                     cardView = createCardViewRight(messagebox.getContinut(), messagebox.getData());
                                 } else {
+                                    //other user message
                                     cardView = createCardViewLeft(messagebox.getContinut(), messagebox.getData());
                                 }
 
+                                //puts scorll view to the bottom (always the newest message is at the bottom)
                                 nestedScrollView.post(new Runnable() {
                                     @Override
                                     public void run() {
@@ -292,6 +301,7 @@ public class SelectedChatJ extends AppCompatActivity {
         // Create the TextView for 'continut'
         TextView textViewContinut = new TextView(SelectedChatJ.this);
         textViewContinut.setText(continut);
+        textViewContinut.setTextColor(Color.BLACK);
         textViewContinut.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
         textViewContinut.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -346,6 +356,7 @@ public class SelectedChatJ extends AppCompatActivity {
         // Create the TextView for 'continut'
         TextView textViewContinut = new TextView(SelectedChatJ.this);
         textViewContinut.setText(continut);
+        textViewContinut.setTextColor(Color.BLACK);
         textViewContinut.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
         textViewContinut.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,

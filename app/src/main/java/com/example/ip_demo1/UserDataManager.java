@@ -7,6 +7,7 @@ public class UserDataManager {
 
 
     // User data fields
+    private Integer id;
     private String nume;
     private String prenume;
     private String varsta;
@@ -43,6 +44,13 @@ public class UserDataManager {
         return instance;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getNume() {
         return nume;

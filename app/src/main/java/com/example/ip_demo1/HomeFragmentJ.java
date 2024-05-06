@@ -38,6 +38,7 @@ public class HomeFragmentJ extends Fragment {
         // Get the name of the user
         String userName = userDataManager.getPrenume();
 
+
         // Generate the welcome message based on the user's name
         String welcomeMessage = getString(R.string.HOMtcvGreeetingTextView, userName);
 

@@ -48,6 +48,7 @@ public class ChatFragmentJ extends Fragment {
 
         //CardView to_s_chat = view.findViewById(R.id.llChat2CardView);
 
+        //declaring buttons
         ImageView searchButton = view.findViewById(R.id.strImageView);
         EditText searchInputField = view.findViewById(R.id.strEditText);
 
@@ -66,12 +67,13 @@ public class ChatFragmentJ extends Fragment {
         JSONObject userData = new JSONObject();
         try {
             UserDataManager userDataManager = UserDataManager.getInstance();
-            userData.put("user_email",userDataManager.getAdresa_email());
+            userData.put("user_id",userDataManager.getId());
         } catch (JSONException e) {
             e.printStackTrace();
         }
         Log.d(TAG, userData.toString());
 
+        //creating request
         JsonObjectRequest chatRequest = new JsonObjectRequest(Request.Method.POST, url, userData,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -82,6 +84,7 @@ public class ChatFragmentJ extends Fragment {
                         String message = response.optString("message", "Unknown message");
 
                         try {
+                            //we put the arrays in the JSON object to our own arrays
                             JSONArray emailArray = response.getJSONArray("email_values");
                             Log.d(TAG,emailArray.toString());
                             JSONArray prenumeArray = response.getJSONArray("prenume_values");
@@ -92,26 +95,27 @@ public class ChatFragmentJ extends Fragment {
                             Log.d(TAG,lastMsgArray.toString());
                             JSONArray id_convArray = response.getJSONArray("id_conv_values");
                             Log.d(TAG,id_convArray.toString());
+
+                            //we create a list containing all the arrays
                             List<EmailNamePair> emailNamePairsExisting = parseJsonArrays(emailArray, prenumeArray,dateArray,lastMsgArray, id_convArray);
 
                             parentLayout.removeAllViews();
 
                             // Sort emailNamePairsExisting list by date
+                            //we do this so that the newest message appears first
                             Collections.sort(emailNamePairsExisting, new Comparator<EmailNamePair>() {
                                 @Override
                                 public int compare(EmailNamePair pair1, EmailNamePair pair2) {
-                                    // Compare the dates of the pairs
-                                    // Assuming the date format is "yyyy-MM-dd", you can use String.compareTo()
                                     return pair2.getDate().compareTo(pair1.getDate());
                                 }
                             });
 
-                            // Now you have a list of EmailNamePair objects, you can use it as needed
+                            //we go through the list
                             for (EmailNamePair pair : emailNamePairsExisting) {
                                 // Create a CardView for each pair and add it to the parent LinearLayout
                                 CardView cardView = createCardViewExisting(pair.getEmail(), pair.getPrenume(),pair.getDate(),pair.getLast_msg(),pair.getId_conv());
                                 parentLayout.addView(cardView);
-                                Log.d(TAG,"obiect created: "+ pair.toString());
+                                Log.d(TAG,"object created: "+ pair.toString());
 
                             }
                         } catch (JSONException e) {
@@ -137,23 +141,24 @@ public class ChatFragmentJ extends Fragment {
         Volley.newRequestQueue(requireContext()).add(chatRequest);
 
 
-
+        //executed when search button is pressed
         searchButton.setOnClickListener(v -> {
 
             url=getString(R.string.URLsearch);
 
+            //creating the JSON object
             JSONObject searchData = new JSONObject();
             try {
                 UserDataManager userDataManager = UserDataManager.getInstance();
                 searchData.put("searched_email",searchInputField.getText().toString());
-                searchData.put("email_logged_user",userDataManager.getAdresa_email());
+                searchData.put("user_id",userDataManager.getId());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
             Log.d(TAG, searchData.toString());
 
 
-
+            //creating the request
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, searchData,
                     new Response.Listener<JSONObject>() {
                         @Override
@@ -167,6 +172,7 @@ public class ChatFragmentJ extends Fragment {
                             Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
 
                             try {
+                                //we put the arrays in the JSON object to our own arrays
                                 JSONArray emailArray = response.getJSONArray("email_values");
                                 Log.d(TAG,emailArray.toString());
                                 JSONArray prenumeArray = response.getJSONArray("prenume_values");
@@ -177,17 +183,20 @@ public class ChatFragmentJ extends Fragment {
                                 Log.d(TAG,lastMsgArray.toString());
                                 JSONArray id_convArray = response.getJSONArray("id_conv_values");
                                 Log.d(TAG,id_convArray.toString());
+
+                                //we create a list containing all the arrays
                                 List<EmailNamePair> emailNamePairs = parseJsonArrays(emailArray, prenumeArray,dateArray,lastMsgArray, id_convArray);
 
                                 parentLayout.removeAllViews();
 
-                                // Now you have a list of EmailNamePair objects, you can use it as needed
                                 for (EmailNamePair pair : emailNamePairs) {
                                     CardView cardView;
                                     // Create a CardView for each pair and add it to the parent LinearLayout
                                     if (pair.getId_conv().equals("-1")) {
+                                        //if -1 is returned as id we know that we havent talked to this person yet
                                         cardView = createCardView(pair.getEmail(), pair.getPrenume(),pair.getId_conv());
                                     }else{
+                                        //cardview for existing conversations
                                         cardView = createCardViewExisting(pair.getEmail(), pair.getPrenume(),pair.getDate(),pair.getLast_msg(),pair.getId_conv());
                                     }
                                     parentLayout.addView(cardView);
@@ -263,6 +272,7 @@ public class ChatFragmentJ extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(requireContext(),SelectedChatJ.class);
+                //we pass the email, prenume and id_conv to the SelectedChatJ activity
                 intent.putExtra("email", email);
                 intent.putExtra("prenume", prenume);
                 intent.putExtra("id_conv",idConv);
@@ -345,6 +355,7 @@ public class ChatFragmentJ extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(requireContext(),SelectedChatJ.class);
+                //we pass the email, prenume and id_conv to the SelectedChatJ activity
                 intent.putExtra("email", email);
                 intent.putExtra("prenume", prenume);
                 intent.putExtra("id_conv",id_conv);
