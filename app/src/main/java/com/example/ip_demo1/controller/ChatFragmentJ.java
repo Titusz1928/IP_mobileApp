@@ -1,4 +1,4 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.controller;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -25,6 +24,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.ip_demo1.R;
+import com.example.ip_demo1.model.EmailNamePair;
+import com.example.ip_demo1.model.UserData;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -66,7 +68,7 @@ public class ChatFragmentJ extends Fragment {
         url=getString(R.string.URLchats);
         JSONObject userData = new JSONObject();
         try {
-            UserDataManager userDataManager = UserDataManager.getInstance();
+            UserData userDataManager = UserData.getInstance();
             userData.put("user_id",userDataManager.getId());
         } catch (JSONException e) {
             e.printStackTrace();
@@ -149,7 +151,7 @@ public class ChatFragmentJ extends Fragment {
             //creating the JSON object
             JSONObject searchData = new JSONObject();
             try {
-                UserDataManager userDataManager = UserDataManager.getInstance();
+                UserData userDataManager = UserData.getInstance();
                 searchData.put("searched_email",searchInputField.getText().toString());
                 searchData.put("user_id",userDataManager.getId());
             } catch (JSONException e) {
@@ -271,7 +273,7 @@ public class ChatFragmentJ extends Fragment {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(requireContext(),SelectedChatJ.class);
+                Intent intent = new Intent(requireContext(), SelectedChatJ.class);
                 //we pass the email, prenume and id_conv to the SelectedChatJ activity
                 intent.putExtra("email", email);
                 intent.putExtra("prenume", prenume);

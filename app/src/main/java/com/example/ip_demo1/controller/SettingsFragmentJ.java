@@ -1,4 +1,4 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
+
+import com.example.ip_demo1.R;
+import com.example.ip_demo1.controller.ChangeInformationJ;
+import com.example.ip_demo1.controller.ChangePasswordActivityJ;
+import com.example.ip_demo1.controller.LoginActivity;
 
 public class SettingsFragmentJ extends Fragment {
 

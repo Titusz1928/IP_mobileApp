@@ -1,4 +1,4 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ip_demo1.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class VizualizareActivityJ extends AppCompatActivity {

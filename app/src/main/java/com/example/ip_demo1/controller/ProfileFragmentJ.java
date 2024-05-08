@@ -1,4 +1,4 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+
+import com.example.ip_demo1.R;
 
 public class ProfileFragmentJ extends Fragment {
 

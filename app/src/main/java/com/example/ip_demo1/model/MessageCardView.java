@@ -1,4 +1,4 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.model;
 
 import android.content.Context;
 import android.util.AttributeSet;

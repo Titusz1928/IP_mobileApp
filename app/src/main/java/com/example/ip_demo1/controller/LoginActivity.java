@@ -1,4 +1,4 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.ip_demo1.R;
+import com.example.ip_demo1.model.UserData;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONException;
@@ -70,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                             if(message.equals("Welcome!")) {
 
                                 //using UserDataManager Singleton object to store the user data
-                                UserDataManager userDataManager = UserDataManager.getInstance();
+                                UserData userDataManager = UserData.getInstance();
 
                                 userDataManager.setId(Integer.parseInt(response.optString("id","Unknown")));
                                 userDataManager.setNume(response.optString("nume", "Unknown"));

@@ -1,4 +1,4 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,18 +11,11 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.ArrayList;
+import com.example.ip_demo1.R;
+import com.example.ip_demo1.model.UserData;
 
 public class HomeFragmentJ extends Fragment {
-
-    private RecyclerView recyclerView;
-    private ArrayList<DataClass> dataList;
-    private ArrayList<String> titleList;
-    private ArrayList<String> dateList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,7 +26,7 @@ public class HomeFragmentJ extends Fragment {
         TextView tcvGreetingTextView = view.findViewById(R.id.tcvGreetingTextView);
 
         // Get the instance of UserDataManager
-        UserDataManager userDataManager = UserDataManager.getInstance();
+        UserData userDataManager = UserData.getInstance();
 
         // Get the name of the user
         String userName = userDataManager.getPrenume();
@@ -98,13 +91,5 @@ public class HomeFragmentJ extends Fragment {
         });
 
         return view;
-    }
-
-    private void getData() {
-        for (int i = 0; i < titleList.size(); i++) {
-            DataClass dataClass = new DataClass(titleList.get(i), dateList.get(i));
-            dataList.add(dataClass);
-        }
-        recyclerView.setAdapter(new AdapterClass(dataList));
     }
 }

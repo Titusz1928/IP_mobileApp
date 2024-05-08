@@ -1,4 +1,4 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.model;
 
 public class MessageBox {
     private String Continut;

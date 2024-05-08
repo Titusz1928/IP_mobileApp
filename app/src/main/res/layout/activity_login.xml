@@ -241,14 +241,23 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
-                    android:id="@+id/llInfoTextView"
+                    android:id="@+id/llVersionTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
 
                     android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:text="Clinica Medicala 2024"/>
+                    android:textSize="12sp"
+                    android:text="@string/MAINllVersionTextView"/>
+
+                <TextView
+                    android:id="@+id/llInfoTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:text="@string/MAINllInfoTextView"/>
 
             </LinearLayout>
 

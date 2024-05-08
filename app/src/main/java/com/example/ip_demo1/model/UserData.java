@@ -1,8 +1,8 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.model;
 
-public class UserDataManager {
+public class UserData {
     // Singleton instance
-    private static UserDataManager instance;
+    private static UserData instance;
 
 
 
@@ -31,15 +31,15 @@ public class UserDataManager {
     }
 
     // Private constructor to prevent instantiation
-    private UserDataManager() {
+    private UserData() {
         // Initialize your user data here if needed
     }
 
 
     // Static method to get the singleton instance
-    public static UserDataManager getInstance() {
+    public static UserData getInstance() {
         if (instance == null) {
-            instance = new UserDataManager();
+            instance = new UserData();
         }
         return instance;
     }

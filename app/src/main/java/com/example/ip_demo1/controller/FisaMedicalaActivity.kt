@@ -1,11 +1,10 @@
-package com.example.ip_demo1
+package com.example.ip_demo1.controller
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TableRow
-import androidx.cardview.widget.CardView
+import com.example.ip_demo1.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FisaMedicalaActivity : AppCompatActivity() {

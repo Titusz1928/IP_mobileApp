@@ -1,4 +1,4 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.controller;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,8 +18,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
 
@@ -28,16 +26,17 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.ip_demo1.R;
+import com.example.ip_demo1.model.MessageBox;
+import com.example.ip_demo1.model.MessageCardView;
+import com.example.ip_demo1.model.UserData;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class SelectedChatJ extends AppCompatActivity {
@@ -55,6 +54,8 @@ public class SelectedChatJ extends AppCompatActivity {
     private LinearLayout parentLayout;
     private String idConv;
 
+    boolean firstLoad=true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +65,8 @@ public class SelectedChatJ extends AppCompatActivity {
         nestedScrollView = findViewById(R.id.clNestedScrollView);
 
         parentLayout = findViewById(R.id.nsvLinearLayout);
+
+
 
 
         TextView nameText = findViewById(R.id.tcvNameText);
@@ -93,6 +96,7 @@ public class SelectedChatJ extends AppCompatActivity {
 
 
 
+
         //executed after pressing send button
         sendButton.setOnClickListener(v -> {
             //used for preventing double clicks
@@ -106,7 +110,7 @@ public class SelectedChatJ extends AppCompatActivity {
             //creating json object
             JSONObject messageData = new JSONObject();
             try {
-                UserDataManager userDataManager = UserDataManager.getInstance();
+                UserData userDataManager = UserData.getInstance();
 
                 String receiverEmail = getIntent().getStringExtra("email");
 
@@ -184,10 +188,10 @@ public class SelectedChatJ extends AppCompatActivity {
         //loading previous messages
         url=getString(R.string.URLmessages);
 
-        //creating json objec
+        //creating json object
         JSONObject conversationData = new JSONObject();
         try {
-            UserDataManager userDataManager = UserDataManager.getInstance();
+            UserData userDataManager = UserData.getInstance();
             conversationData.put("id_conv", idConv);
             //to get database id
             conversationData.put("user_id",userDataManager.getId());
@@ -208,7 +212,7 @@ public class SelectedChatJ extends AppCompatActivity {
                         String message = response.optString("message", "Unknown message");
 
                         try {
-                            UserDataManager userDataManager = UserDataManager.getInstance();
+                            UserData userDataManager = UserData.getInstance();
                             String user_id=String.valueOf(userDataManager.getId());
                             //System.out.println(user_id);
                             //creating array from the json arrays
@@ -240,13 +244,16 @@ public class SelectedChatJ extends AppCompatActivity {
                                     cardView = createCardViewLeft(messagebox.getContinut(), messagebox.getData());
                                 }
 
-                                //puts scorll view to the bottom (always the newest message is at the bottom)
-                                nestedScrollView.post(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        nestedScrollView.fullScroll(View.FOCUS_DOWN);
-                                    }
-                                });
+                                if(firstLoad) {
+                                    //puts scorll view to the bottom (always the newest message is at the bottom)
+                                    nestedScrollView.post(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            nestedScrollView.fullScroll(View.FOCUS_DOWN);
+                                        }
+                                    });
+                                    firstLoad=false;
+                                }
 
                                 parentLayout.addView(cardView);
                                 Log.d(TAG, "Object created: " + messagebox.toString());

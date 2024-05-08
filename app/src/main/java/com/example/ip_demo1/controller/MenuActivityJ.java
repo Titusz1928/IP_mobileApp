@@ -1,10 +1,11 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.controller;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.ip_demo1.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuActivityJ extends AppCompatActivity {

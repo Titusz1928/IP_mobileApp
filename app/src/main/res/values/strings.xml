@@ -55,6 +55,8 @@ un specialist pentru orice îngrijorare sau întrebare legată de sănătatea ta
     <string name="MAINifcvRememberCheckbox"> Ține-mă minte </string>
     <string name="MAINifcvCBPasswordlImage"> Parolă corectă </string>
     <string name="MAINifcvCBEmailImage"> Email corect </string>
+    <string name="MAINllVersionTextView"> Version 0.11 </string>
+    <string name="MAINllInfoTextView"> Vitalis - 2024/05/08 </string>
 
     <!-- Registrare -->
     <string name="REGtcvTitleText"> Registrare </string>

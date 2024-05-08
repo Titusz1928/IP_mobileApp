@@ -1,9 +1,11 @@
-package com.example.ip_demo1;
+package com.example.ip_demo1.controller;
 
 import android.os.Bundle;
 import android.webkit.WebView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.ip_demo1.R;
 
 import java.io.BufferedReader;
 import java.io.IOException;
