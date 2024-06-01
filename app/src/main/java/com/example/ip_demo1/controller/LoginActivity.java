@@ -15,7 +15,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.ip_demo1.R;
-import com.example.ip_demo1.model.UserData;
+import com.example.ip_demo1.model.User;
+import com.example.ip_demo1.model.UserSession;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONException;
@@ -72,22 +73,26 @@ public class LoginActivity extends AppCompatActivity {
                             if(message.equals("Welcome!")) {
 
                                 //using UserDataManager Singleton object to store the user data
-                                UserData userDataManager = UserData.getInstance();
+                                User user = new User();
 
-                                userDataManager.setId(Integer.parseInt(response.optString("id","Unknown")));
-                                userDataManager.setNume(response.optString("nume", "Unknown"));
-                                userDataManager.setPrenume(response.optString("prenume", "Unknown"));
-                                userDataManager.setVarsta(response.optString("varsta", "Unknown"));
-                                userDataManager.setCnp(response.optString("cnp", "Unknown"));
-                                userDataManager.setStrada(response.optString("strada", "Unknown"));
-                                userDataManager.setOras(response.optString("oras", "Unknown"));
-                                userDataManager.setJudet(response.optString("judet", "Unknown"));
-                                userDataManager.setTara(response.optString("tara", "Unknown"));
-                                userDataManager.setNumar_telefon(response.optString("numar_tel", "Unknown"));
-                                userDataManager.setProfesie(response.optString("profes", "Unknown"));
-                                userDataManager.setLoc_munca(response.optString("loc_mun", "Unknown"));
-                                userDataManager.setAdresa_email(response.optString("adresa_email", "Unknown"));
-                                userDataManager.setParola(response.optString("parola", "Unknown"));
+                                user.setId(Integer.parseInt(response.optString("id","Unknown")));
+                                user.setLastName(response.optString("nume", "Unknown"));
+                                user.setFirstName(response.optString("prenume", "Unknown"));
+                                user.setAge(response.optString("varsta", "Unknown"));
+                                user.setCnp(response.optString("cnp", "Unknown"));
+                                user.setStreet(response.optString("strada", "Unknown"));
+                                user.setCity(response.optString("oras", "Unknown"));
+                                user.setCounty(response.optString("judet", "Unknown"));
+                                user.setCounty(response.optString("tara", "Unknown"));
+                                user.setPhoneNumber(response.optString("numar_tel", "Unknown"));
+                                user.setProfession(response.optString("profes", "Unknown"));
+                                user.setWorkplace(response.optString("loc_mun", "Unknown"));
+                                user.setEmailAddress(response.optString("adresa_email", "Unknown"));
+                                user.setPassword(response.optString("parola", "Unknown"));
+
+                                Log.d("MyTag","attempting to save user");
+                                UserSession.getInstance(LoginActivity.this).setUser(user);
+                                Log.d("MyTag","attempt was made");
 
                                 //going to MenuActivity (Home Fragment)
                                 Intent intent = new Intent(LoginActivity.this, MenuActivityJ.class);

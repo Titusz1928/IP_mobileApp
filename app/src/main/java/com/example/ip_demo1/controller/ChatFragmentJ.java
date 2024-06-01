@@ -26,7 +26,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.ip_demo1.R;
 import com.example.ip_demo1.model.EmailNamePair;
-import com.example.ip_demo1.model.UserData;
+import com.example.ip_demo1.model.User;
+import com.example.ip_demo1.model.UserSession;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -68,8 +69,9 @@ public class ChatFragmentJ extends Fragment {
         url=getString(R.string.URLchats);
         JSONObject userData = new JSONObject();
         try {
-            UserData userDataManager = UserData.getInstance();
-            userData.put("user_id",userDataManager.getId());
+            UserSession userSession = UserSession.getInstance(requireContext());
+            User user = userSession.getUser();
+            userData.put("user_id",user.getId());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -151,9 +153,10 @@ public class ChatFragmentJ extends Fragment {
             //creating the JSON object
             JSONObject searchData = new JSONObject();
             try {
-                UserData userDataManager = UserData.getInstance();
+                UserSession userSession = UserSession.getInstance(requireContext());
+                User user = userSession.getUser();
                 searchData.put("searched_email",searchInputField.getText().toString());
-                searchData.put("user_id",userDataManager.getId());
+                searchData.put("user_id",user.getId());
             } catch (JSONException e) {
                 e.printStackTrace();
             }

@@ -14,6 +14,7 @@ import com.example.ip_demo1.R;
 import com.example.ip_demo1.controller.ChangeInformationJ;
 import com.example.ip_demo1.controller.ChangePasswordActivityJ;
 import com.example.ip_demo1.controller.LoginActivity;
+import com.example.ip_demo1.model.UserSession;
 
 public class SettingsFragmentJ extends Fragment {
 
@@ -39,7 +40,9 @@ public class SettingsFragmentJ extends Fragment {
             @Override
             public void onClick(View v) {
                 // Navigate to MainActivity
+                UserSession.getInstance(requireActivity()).clearUser();
                 Intent intent = new Intent(requireContext(), LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });

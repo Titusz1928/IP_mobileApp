@@ -29,7 +29,8 @@ import com.android.volley.toolbox.Volley;
 import com.example.ip_demo1.R;
 import com.example.ip_demo1.model.MessageBox;
 import com.example.ip_demo1.model.MessageCardView;
-import com.example.ip_demo1.model.UserData;
+import com.example.ip_demo1.model.User;
+import com.example.ip_demo1.model.UserSession;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
@@ -110,12 +111,13 @@ public class SelectedChatJ extends AppCompatActivity {
             //creating json object
             JSONObject messageData = new JSONObject();
             try {
-                UserData userDataManager = UserData.getInstance();
+                UserSession userSession = UserSession.getInstance(SelectedChatJ.this);
+                User user = userSession.getUser();
 
                 String receiverEmail = getIntent().getStringExtra("email");
 
                 messageData.put("message",messageInputField.getText().toString());
-                messageData.put("user_id",userDataManager.getId());
+                messageData.put("user_id",user.getId());
                 messageData.put("remail",receiverEmail);
 
 
@@ -191,10 +193,11 @@ public class SelectedChatJ extends AppCompatActivity {
         //creating json object
         JSONObject conversationData = new JSONObject();
         try {
-            UserData userDataManager = UserData.getInstance();
+            UserSession userSession = UserSession.getInstance(SelectedChatJ.this);
+            User user = userSession.getUser();
             conversationData.put("id_conv", idConv);
             //to get database id
-            conversationData.put("user_id",userDataManager.getId());
+            conversationData.put("user_id",user.getId());
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -212,8 +215,9 @@ public class SelectedChatJ extends AppCompatActivity {
                         String message = response.optString("message", "Unknown message");
 
                         try {
-                            UserData userDataManager = UserData.getInstance();
-                            String user_id=String.valueOf(userDataManager.getId());
+                            UserSession userSession = UserSession.getInstance(SelectedChatJ.this);
+                            User user = userSession.getUser();
+                            String user_id=String.valueOf(user.getId());
                             //System.out.println(user_id);
                             //creating array from the json arrays
                             JSONArray continutArray = response.getJSONArray("continut_values");
